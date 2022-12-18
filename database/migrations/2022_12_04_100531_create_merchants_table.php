@@ -18,6 +18,9 @@ return new class extends Migration
             $table->foreignIdFor(\App\Models\User::class,'admin_id');
             $table->string('merchant_name');
             $table->foreignIdFor(\App\Models\Country::class);
+            $table->foreign('admin_id')->references('id')->on('users');
+            $table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

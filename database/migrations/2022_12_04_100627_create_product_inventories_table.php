@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignIdFor(\App\Models\Merchant::class);
             $table->unsignedInteger('quantity');
             $table->unsignedTinyInteger('status');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
