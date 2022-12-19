@@ -19,6 +19,9 @@ return new class extends Migration
             $table->unsignedDouble('amount');
             $table->foreignIdFor(\App\Models\Merchant::class, 'provider_id');
             $table->unsignedTinyInteger('status');
+            $table->foreign('order_id')->references('id')->on('orders');
+            $table->foreign('provider_id')->references('id')->on('merchants');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

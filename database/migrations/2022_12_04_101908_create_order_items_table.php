@@ -18,6 +18,8 @@ return new class extends Migration
             $table->foreignIdFor(\App\Models\Order::class);
             $table->foreignIdFor(\App\Models\Product::class);
             $table->unsignedInteger('quantity');
+            $table->foreign('order_id')->references('id')->on('orders');
+            $table->foreign('product_id')->references('id')->on('products');
             $table->timestamps();
         });
     }

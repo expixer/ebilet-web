@@ -20,6 +20,7 @@ return new class extends Migration
             $table->unsignedTinyInteger("status")->default(1);
             $table->foreignIdFor(\App\Models\Category::class);
             $table->foreign("category_id")->references("id")->on("categories")->onDelete("cascade");
+            $table->softDeletes();
             $table->timestamps();
         });
     }

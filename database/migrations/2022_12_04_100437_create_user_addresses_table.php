@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('postal_code');
             $table->foreignIdFor(\App\Models\Country::class);
             $table->string('mobile');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('country_id')->references('id')->on('countries');
             $table->timestamps();
         });
     }
