@@ -17,7 +17,11 @@ class ProductInventoryFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'quantity' => random_int(0,10),
+            'status' => $this->faker->randomDigit(),
+            'created_at' => now(),
+            'updated_at' => now(),
+
         ];
     }
 }

@@ -17,7 +17,9 @@ class MerchantFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'merchant_name' => $this->faker->userName(),
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
     }
 }

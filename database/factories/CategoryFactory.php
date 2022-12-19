@@ -17,7 +17,9 @@ class CategoryFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'cat_name' => $this->faker->word(),
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
     }
 }
