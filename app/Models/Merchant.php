@@ -9,5 +9,5 @@ class Merchant extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $fillable = ['merchant_name', 'admin_id', 'country_id', 'category_id'];
 }

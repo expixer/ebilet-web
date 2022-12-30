@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,10 +17,12 @@ class ProductFactory extends Factory
      */
     public function definition()
     {
+        $c = Category::pluck('id');
         return [
-            'name' => $this->faker->word(),
+            'name' => $this->faker->domainWord(),
             'price' => random_int(0,10000),
-            'status'=> $this->faker->randomDigit(),
+            'category_id' =>  $c->count() > 0 ? $c->random() : Category::factory()->create()->id,
+            'status'=> $this->faker->numberBetween(0,1),
             'created_at' => now(),
             'updated_at' => now(),
         ];

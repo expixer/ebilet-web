@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Merchant;
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,8 +19,10 @@ class ProductInventoryFactory extends Factory
     public function definition()
     {
         return [
+            'product_id' => Product::pluck('id')->random(),
+            'merchant_id' => Merchant::pluck('id')->random(),
             'quantity' => random_int(0,10),
-            'status' => $this->faker->randomDigit(),
+            'status' => $this->faker->numberBetween(0,1),
             'created_at' => now(),
             'updated_at' => now(),
 

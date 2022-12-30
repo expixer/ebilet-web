@@ -9,5 +9,5 @@ class Country extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $fillable = ['country_name', 'country_code'];
 }

@@ -17,7 +17,9 @@ class MerchantFactory extends Factory
     public function definition()
     {
         return [
-            'merchant_name' => $this->faker->userName(),
+            'merchant_name' => $this->faker->company(),
+            'user_id' => \App\Models\User::pluck('id')->random(),
+            'country_id' => \App\Models\Country::pluck('id')->random(),
             'created_at' => now(),
             'updated_at' => now(),
         ];

@@ -23,7 +23,6 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

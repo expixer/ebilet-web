@@ -7,6 +7,8 @@ import { createInertiaApp } from '@inertiajs/inertia-react';
 import { InertiaProgress } from '@inertiajs/progress';
 import { RouteContext } from '@/Hooks/useRoute';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
+import PostsIndex from "./Pages/Companies/Index";
+import App from "./Layouts/App";
 
 const appName =
   window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
@@ -20,6 +22,7 @@ createInertiaApp({
     ),
   setup({ el, App, props }) {
     const root = createRoot(el);
+    root.render(<PostsIndex />);
     return root.render(
       <RouteContext.Provider value={(window as any).route}>
         <App {...props} />
