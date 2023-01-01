@@ -21,6 +21,7 @@ class ProductFactory extends Factory
         return [
             'name' => $this->faker->domainWord(),
             'price' => random_int(0,10000),
+            'description' => $this->faker->words(5),
             'category_id' =>  $c->count() > 0 ? $c->random() : Category::factory()->create()->id,
             'status'=> $this->faker->numberBetween(0,1),
             'created_at' => now(),

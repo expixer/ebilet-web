@@ -36,7 +36,7 @@
 </div>
 <ul class="navbar-nav justify-content-end flex-grow-1 pe_5">
 <li class="nav-item">
-<a class="nav-link active" aria-current="page" href="index.html">Home</a>
+<a class="nav-link active" aria-current="page" href="index.html">Ana Sayfa</a>
 </li>
 <li class="nav-item dropdown">
 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -49,9 +49,9 @@ Keşfet
 </ul>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="pricing.html">Pricing</a>
+<a class="nav-link" href="pricing.html">Ücretlendirme</a>
 </li>
-<li class="nav-item dropdown">
+{{--<li class="nav-item dropdown">
 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 Blog
 </a>
@@ -59,10 +59,10 @@ Blog
 <li><a class="dropdown-item" href="our_blog.html">Our Blog</a></li>
 <li><a class="dropdown-item" href="blog_detail_view.html">Blog Detail View</a></li>
 </ul>
-</li>
+</li>--}}
 <li class="nav-item dropdown">
 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-Help
+Yardım
 </a>
 <ul class="dropdown-menu dropdown-submenu">
 <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
@@ -70,7 +70,7 @@ Help
 <li><a class="dropdown-item" href="contact_us.html">Contact Us</a></li>
 </ul>
 </li>
-<li class="nav-item dropdown">
+{{--<li class="nav-item dropdown">
 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 Pages
 </a>
@@ -113,7 +113,7 @@ Pages
 <li><a class="dropdown-item" href="term_and_conditions.html">Terms & Conditions</a></li>
 <li><a class="dropdown-item" href="privacy_policy.html">Privacy Policy</a></li>
 </ul>
-</li>
+</li>--}}
 </ul>
 </div>
 <div class="offcanvas-footer">
@@ -134,7 +134,7 @@ Pages
 <li>
 <a href="create.html" class="create-btn btn-hover">
 <i class="fa-solid fa-calendar-days"></i>
-<span>Create Event</span>
+<span>Etkinlik Oluştur</span>
 </a>
 </li>
 <li class="dropdown account-dropdown">
@@ -172,4 +172,4 @@ Pages
 </div>
 </header>
 
-    
+

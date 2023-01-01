@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, shrink-to-fit=9">
 <meta name="description" content="Gambolthemes">
 <meta name="author" content="Gambolthemes">
-<title>Barren - Simple Online Event Ticketing System</title>
+<title>Barren - Basit Çevrimiçi Etkinlik Biletleme Sistemi</title>
 
 <link rel="icon" type="image/png" href="assets/images/fav.png">
 
@@ -28,28 +28,26 @@
 </head>
 <body class="d-flex flex-column h-100">
  @include('includes.header')
-
-
 <div class="wrapper">
-<div class="hero-banner">
+{{--<div class="hero-banner">
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-xl-7 col-lg-9 col-md-10">
 <div class="hero-banner-content">
 <h2>The Easiest and Most Powerful Online Event Booking and Ticketing System</h2>
 <p>Barren is an all-in-one event ticketing platform for event organisers, promoters, and managers. Easily create, promote and manage your events of any type and size.</p>
-<a href="create.html" class="main-btn btn-hover">Create Event <i class="fa-solid fa-arrow-right ms-3"></i></a>
+<a href="create.html" class="main-btn btn-hover">Etkinlik Oluştur <i class="fa-solid fa-arrow-right ms-3"></i></a>
 </div>
 </div>
 </div>
 </div>
-</div>
+</div>--}}
 <div class="explore-events p-80">
 <div class="container">
 <div class="row">
 <div class="col-xl-12 col-lg-12 col-md-12">
 <div class="main-title">
-<h3>Explore Events</h3>
+<h3>Etkinlikleri Keşfet</h3>
 </div>
 </div>
 <div class="col-xl-12 col-lg-12 col-md-12">
@@ -57,28 +55,28 @@
 <div class="featured-controls">
 <div class="filter-tag">
 <a href="explore_events_by_date.html" class="active">All</a>
-<a href="explore_events_by_date.html">Today</a>
-<a href="explore_events_by_date.html">Tomorrow</a>
-<a href="explore_events_by_date.html">This Week</a>
-<a href="explore_events_by_date.html">This Weekend</a>
-<a href="explore_events_by_date.html">Next Week</a>
-<a href="explore_events_by_date.html">Next Weekend</a>
-<a href="explore_events_by_date.html">This Month</a>
-<a href="explore_events_by_date.html">Next Month</a>
-<a href="explore_events_by_date.html">This Year</a>
-<a href="explore_events_by_date.html">Next Year</a>
+<a href="explore_events_by_date.html">Bugün</a>
+<a href="explore_events_by_date.html">Yarın</a>
+<a href="explore_events_by_date.html">Bu Hafta içi</a>
+<a href="explore_events_by_date.html">Bu Hafta sonu</a>
+<a href="explore_events_by_date.html">Önümüzdeki Hafta İçi</a>
+<a href="explore_events_by_date.html">Önümüzdeki Hafta Sonu</a>
+<a href="explore_events_by_date.html">Bu Ay</a>
+<a href="explore_events_by_date.html">Önümüzdeki Ay</a>
+<a href="explore_events_by_date.html">Bu Yıl</a>
+<a href="explore_events_by_date.html">Önümüzdeki Yıl</a>
 </div>
 <div class="controls">
-<button type="button" class="control" data-filter="all">All</button>
-<button type="button" class="control" data-filter=".arts">Arts</button>
-<button type="button" class="control" data-filter=".business">Business</button>
-<button type="button" class="control" data-filter=".concert">Concert</button>
-<button type="button" class="control" data-filter=".workshops">Workshops</button>
-<button type="button" class="control" data-filter=".coaching_consulting">Coaching and Consulting</button>
-<button type="button" class="control" data-filter=".health_Wellness">Health and Wellbeing</button>
-<button type="button" class="control" data-filter=".volunteer">Volunteer</button>
-<button type="button" class="control" data-filter=".sports">Sports</button>
-<button type="button" class="control" data-filter=".free">Free</button>
+<button type="button" class="control" data-filter="all">Hepsi</button>
+<button type="button" class="control" data-filter=".arts">Sanat</button>
+<button type="button" class="control" data-filter=".business">İş</button>
+<button type="button" class="control" data-filter=".concert">Konser</button>
+<button type="button" class="control" data-filter=".workshops">El İşleri</button>
+<button type="button" class="control" data-filter=".coaching_consulting">Fitness</button>
+<button type="button" class="control" data-filter=".health_Wellness">GYM</button>
+<button type="button" class="control" data-filter=".volunteer">Gönüllü</button>
+<button type="button" class="control" data-filter=".sports">Spor</button>
+<button type="button" class="control" data-filter=".free">Ücretsiz</button>
 </div>
 <div class="row" data-ref="event-filter-content">
 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mix arts concert workshops volunteer sports health_Wellness" data-ref="mixitup-target">
@@ -299,7 +297,7 @@
 </div>
 </div>
 <div class="browse-btn">
-<a href="explore_events.html" class="main-btn btn-hover ">Browse All</a>
+<a href="explore_events.html" class="main-btn btn-hover ">Tümünü Görüntüle</a>
 </div>
 </div>
 </div>
@@ -874,7 +872,7 @@
 <script src="mixitup/dist/mixitup.min.js"></script>
 <script src="{{asset('js/custom.js')}}"></script>
 <script src="{{asset('js/night-mode.js')}}"></script>
-<script>	
+<script>
 		var containerEl = document.querySelector('[data-ref~="event-filter-content"]');
 
             var mixer = mixitup(containerEl, {

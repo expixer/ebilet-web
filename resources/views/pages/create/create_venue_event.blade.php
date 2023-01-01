@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, shrink-to-fit=9">
 <meta name="description" content="Gambolthemes">
 <meta name="author" content="Gambolthemes">
-<title>Barren - Simple Online Event Ticketing System</title>
+<title>Barren - Basit Çevrimiçi Etkinlik Biletleme Sistemi</title>
 
 <link rel="icon" type="image/png" href="images/fav.png">
 
@@ -38,7 +38,7 @@
 <div class="modal-dialog modal-lg">
 <div class="modal-content">
 <div class="modal-header">
-<h5 class="modal-title" id="singleTicketModalLabel">Create Single Ticket</h5>
+<h5 class="modal-title" id="singleTicketModalLabel">Bireysel Bilet Oluştur</h5>
 <button type="button" class="close-model-btn" data-bs-dismiss="modal" aria-label="Close"><i class="uil uil-multiply"></i></button>
 </div>
 <div class="modal-body">
@@ -46,7 +46,7 @@
 <div class="row">
 <div class="col-lg-12 col-md-12">
 <div class="form-group mt-4">
-<label class="form-label">Ticket Name*</label>
+<label class="form-label">Bilet Adı*</label>
 <input class="form-control h_40" type="text" placeholder="Event Ticket Name" value="">
 </div>
 </div>
@@ -549,7 +549,7 @@ Variations (<span class="ticket-subtype-count">1</span>)</h5>
 <div class="row justify-content-center">
 <div class="col-lg-12 col-md-12">
 <div class="main-title text-center">
-<h3>Create Venue Event</h3>
+<h3>Mekan Etkinliği Oluştur</h3>
 </div>
 </div>
 <div class="col-xl-8 col-lg-9 col-md-12">
@@ -559,19 +559,19 @@ Variations (<span class="ticket-subtype-count">1</span>)</h5>
 <li class="active">
 <a href="#tab_step1">
 <span class="number"></span>
-<span class="step-name">Details</span>
+<span class="step-name">Detaylar</span>
 </a>
 </li>
 <li>
 <a href="#tab_step2">
 <span class="number"></span>
-<span class="step-name">Tickets</span>
+<span class="step-name">Bilet Tipleri</span>
 </a>
 </li>
 <li>
 <a href="#tab_step3">
 <span class="number"></span>
-<span class="step-name">Setting</span>
+<span class="step-name">Son Rötuşlar</span>
 </a>
 </li>
 </ul>
@@ -580,22 +580,22 @@ Variations (<span class="ticket-subtype-count">1</span>)</h5>
 <div class="tab-from-content">
 <div class="main-card">
 <div class="bp-title">
-<h4><i class="fa-solid fa-circle-info step_icon me-3"></i>Details</h4>
+<h4><i class="fa-solid fa-circle-info step_icon me-3"></i>Detaylar</h4>
 </div>
 <div class="p-4 bp-form main-form">
 <div class="row">
 <div class="col-lg-12 col-md-12">
 <div class="form-group border_bottom pb_30">
-<label class="form-label fs-16">Give your event a name.*</label>
-<p class="mt-2 d-block fs-14 mb-3">See how your name appears on the event page and a list of all places where your event name will be used. <a href="#" class="a-link">Learn more</a></p>
-<input class="form-control h_50" type="text" placeholder="Enter event name here" value="">
+<label class="form-label fs-16">Etkinliğe bir isim verin.*</label>
+<p class="mt-2 d-block fs-14 mb-3">İnsanların etkinliğinize ilgisini çekebilecek bir isim girin. </p>
+<input class="form-control h_50" type="text" placeholder="Etkinlik Adı" value="">
 </div>
 <div class="form-group border_bottom pt_30 pb_30">
-<label class="form-label fs-16">Choose a category for your event.*</label>
-<p class="mt-2 d-block fs-14 mb-3">Choosing relevant categories helps to improve the discoverability of your event. <a href="#" class="a-link">Learn more</a></p>
-<select class="selectpicker" multiple="" data-size="5" title="Select category" data-live-search="true">
-<option value="01">Arts</option>
-<option value="02">Business</option>
+<label class="form-label fs-16">Etkinlik için bir kategori seçin.*</label>
+<p class="mt-2 d-block fs-14 mb-3">İlgili kategorileri seçmek, etkinliğinizin keşfedilebilirliğini artırmanıza yardımcı olur.</p>
+<select class="selectpicker" multiple="" data-size="5" title="Kategori Seç" data-live-search="true">
+<option value="01">Sanat</option>
+<option value="02">İş</option>
 <option value="03">Coaching and Consulting</option>
 <option value="04">Community and Culture</option>
 <option value="05">Entrepreneurship</option>
@@ -617,11 +617,11 @@ Variations (<span class="ticket-subtype-count">1</span>)</h5>
 </select>
 </div>
 <div class="form-group border_bottom pt_30 pb_30">
-<label class="form-label fs-16">When is your event?*</label>
-<p class="mt-2 fs-14 d-block mb-3">Tell your attendees when your event starts so they can get ready to attend.</p>
+<label class="form-label fs-16">Etkinliğiniz ne zaman?*</label>
+<p class="mt-2 fs-14 d-block mb-3">Katılımcılarınıza etkinliğinizin ne zaman başladığını söyleyin, böylece katılmaya hazırlansınlar.</p>
 <div class="row g-2">
 <div class="col-md-6">
-<label class="form-label mt-3 fs-6">Event Date.*</label>
+<label class="form-label mt-3 fs-6">Etkinlik Tarihi.*</label>
 <div class="loc-group position-relative">
 <input class="form-control h_50 datepicker-here" data-language="en" type="text" placeholder="MM/DD/YYYY" value="">
 <span class="absolute-icon"><i class="fa-solid fa-calendar-days"></i></span>
@@ -631,9 +631,9 @@ Variations (<span class="ticket-subtype-count">1</span>)</h5>
 <div class="row g-2">
 <div class="col-md-6">
 <div class="clock-icon">
-<label class="form-label mt-3 fs-6">Time</label>
+<label class="form-label mt-3 fs-6">Zaman</label>
 <select class="selectpicker" data-size="5" data-live-search="true">
-<option value="00:00">12:00 AM</option>
+<option value="00:00">12:00</option>
 <option value="00:15">12:15 AM</option>
 <option value="00:30">12:30 AM</option>
 <option value="00:45">12:45 AM</option>
@@ -673,7 +673,7 @@ Variations (<span class="ticket-subtype-count">1</span>)</h5>
 <option value="09:15">09:15 AM</option>
 <option value="09:30">09:30 AM</option>
 <option value="09:45">09:45 AM</option>
-<option value="10:00" selected="selected">10:00 AM</option>
+<option value="10:00" selected="selected">10:00</option>
 <option value="10:15">10:15 AM</option>
 <option value="10:30">10:30 AM</option>
 <option value="10:45">10:45 AM</option>
@@ -733,12 +733,12 @@ Variations (<span class="ticket-subtype-count">1</span>)</h5>
 </div>
 </div>
 <div class="col-md-6">
-<label class="form-label mt-3 fs-6">Duration</label>
+<label class="form-label mt-3 fs-6">Süre</label>
 <select class="selectpicker" data-size="5" data-live-search="true">
 <option value="15">15m</option>
 <option value="30">30m</option>
 <option value="45">45m</option>
-<option value="60" selected="selected">1h</option>
+<option value="60" selected="selected">1 saat</option>
 <option value="75">1h 15m</option>
 <option value="90">1h 30m</option>
 <option value="105">1h 45m</option>
@@ -757,30 +757,30 @@ Variations (<span class="ticket-subtype-count">1</span>)</h5>
 </div>
 </div>
 <div class="form-group pt_30 pb_30">
-<label class="form-label fs-16">Add a few images to your event banner.</label>
-<p class="mt-2 fs-14 d-block mb-3 pe_right">Upload colorful and vibrant images as the banner for your event! See how beautiful images help your event details page. <a href="#" class="a-link">Learn more</a></p>
+<label class="form-label fs-16">Etkinlik başlığınıza birkaç resim ekleyin.</label>
+<p class="mt-2 fs-14 d-block mb-3 pe_right">Etkinliğinizin afişi olarak renkli ve canlı görseller yükleyin! Güzel resimlerin etkinlik ayrıntıları sayfanıza ne kadar yardımcı olduğunu görün. </p>
 <div class="content-holder mt-4">
 <div class="default-event-thumb">
 <div class="default-event-thumb-btn">
 <div class="thumb-change-btn">
 <input type="file" id="thumb-img">
-<label for="thumb-img">Change Image</label>
+<label for="thumb-img">Görseli Değiştir</label>
 </div>
 </div>
-<img src="images/banners/custom-img.jpg" alt="">
+<img src="assets/images/banners/custom-img.jpg" alt="">
 </div>
 </div>
 </div>
 <div class="form-group border_bottom pb_30">
-<label class="form-label fs-16">Please describe your event.</label>
-<p class="mt-2 fs-14 d-block mb-3">Write a few words below to describe your event and provide any extra information such as schedules, itinerary or any special instructions required to attend your event.</p>
+<label class="form-label fs-16">Lütfen etkinliğinizi tanımlayın.</label>
+<p class="mt-2 fs-14 d-block mb-3">Etkinliğinizi açıklamak için aşağıya birkaç kelime yazın ve program, güzergah veya etkinliğinize katılmak için gereken özel talimatlar gibi ekstra bilgileri sağlayın.</p>
 <div class="text-editor mt-4">
 <div id="pd_editor"></div>
 </div>
 </div>
 <div class="form-group pt_30 pb-2">
-<label class="form-label fs-16">Where is your event taking place? *</label>
-<p class="mt-2 fs-14 d-block mb-3">Add a venue to your event to tell your attendees where to join the event.</p>
+<label class="form-label fs-16">Etkinliğiniz nerede gerçekleşiyor? *</label>
+<p class="mt-2 fs-14 d-block mb-3">Katılımcılarınıza etkinliğe nerede katılacaklarını söylemek için etkinliğinize bir mekan ekleyin.</p>
 <div class="stepper-data-set">
 <div class="content-holder template-selector">
 <div class="row g-4">
@@ -793,29 +793,29 @@ Variations (<span class="ticket-subtype-count">1</span>)</h5>
 </div>
 <div class="col-md-12">
 <div class="form-group mt-1">
-<label class="form-label fs-6">Venue*</label>
+<label class="form-label fs-6">Mekan*</label>
 <input class="form-control h_50" type="text" placeholder="" value="">
 </div>
 </div>
 <div class="col-md-6">
 <div class="form-group mt-1">
-<label class="form-label fs-6">Address line 1*</label>
+<label class="form-label fs-6">Address Satırı 1*</label>
 <input class="form-control h_50" type="text" placeholder="" value="">
 </div>
 </div>
 <div class="col-md-6">
 <div class="form-group mt-1">
-<label class="form-label fs-6">Address line 2*</label>
+<label class="form-label fs-6">Address Satırı 2*</label>
 <input class="form-control h_50" type="text" placeholder="" value="">
 </div>
 </div>
 <div class="col-md-6">
 <div class="form-group main-form mt-1">
-<label class="form-label">Country*</label>
-<select class="selectpicker" data-size="5" title="Nothing selected" data-live-search="true">
+<label class="form-label">Ülke*</label>
+<select class="selectpicker" data-size="5" title="Seçili yok" data-live-search="true">
 <option value="Algeria">Algeria</option>
 <option value="Argentina">Argentina</option>
-<option value="Australia" selected="">Australia</option>
+<option value="Australia" selected="">Avustralya</option>
 <option value="Austria">Austria (Österreich)</option>
 <option value="Belgium">Belgium (België)</option>
 <option value="Bolivia">Bolivia</option>
@@ -872,24 +872,24 @@ Variations (<span class="ticket-subtype-count">1</span>)</h5>
 </select>
 </div>
 </div>
-<div class="col-md-6">
+{{--<div class="col-md-6">
 <div class="form-group mt-1">
 <label class="form-label">State*</label>
-<input class="form-control h_50" type="text" placeholder="" value="Victoria">
+<input class="form-control h_50" type="text" placeholder="" value="">
 </div>
-</div>
+</div>--}}
 <div class="col-lg-6 col-md-12">
 <div class="form-group mt-1">
-<label class="form-label">City/Suburb*</label>
-<input class="form-control h_50" type="text" placeholder="" value="Melbourne">
+<label class="form-label">Şehir*</label>
+<input class="form-control h_50" type="text" placeholder="" value="">
 </div>
 </div>
-<div class="col-lg-6 col-md-12">
+{{--<div class="col-lg-6 col-md-12">
 <div class="form-group mt-1">
 <label class="form-label">Zip/Post Code*</label>
 <input class="form-control h_50" type="text" placeholder="" value="3000">
 </div>
-</div>
+</div>--}}
 </div>
 </div>
 </div>
@@ -904,29 +904,29 @@ Variations (<span class="ticket-subtype-count">1</span>)</h5>
 <div class="tab-from-content">
 <div class="main-card">
 <div class="bp-title">
-<h4><i class="fa-solid fa-ticket step_icon me-3"></i>Tickets</h4>
+<h4><i class="fa-solid fa-ticket step_icon me-3"></i>Bilet Tipleri</h4>
 </div>
 <div class="bp-form main-form">
 <div class="p-4 form-group border_bottom pb_30">
 <div class="">
 <div class="ticket-section">
-<label class="form-label fs-16">Let's create tickets!</label>
-<p class="mt-2 fs-14 d-block mb-3 pe_right">Create tickets for your event by clicking on the 'Add Tickets' button below.</p>
+<label class="form-label fs-16">Bir etiket tipi oluşturun!</label>
+<p class="mt-2 fs-14 d-block mb-3 pe_right">Aşağıdaki 'Bilet Tipi Ekle' düğmesine tıklayarak etkinliğiniz için bilet oluşturun.</p>
 </div>
 <div class="d-flex align-items-center justify-content-between pt-4 pb-3 full-width">
-<h3 class="fs-18 mb-0">Tickets (<span class="venue-event-ticket-counter">3</span>)</h3>
+<h3 class="fs-18 mb-0">Biletler (<span class="venue-event-ticket-counter">1</span>)</h3>
 <div class="dropdown dropdown-default dropdown-normal btn-ticket-type-top">
 <button class="dropdown-toggle main-btn btn-hover h_40 pe-4 ps-4" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
- <span>Add Tickets</span>
+ <span>Bilet Tipi Ekle</span>
 </button>
 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton" style="">
 <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#singleTicketModal">
 <i class="fa-solid fa-ticket me-2"></i>
-Single Ticket
+Bireysel Bilet
 </a>
 <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#groupTicketModal">
 <i class="fa-solid fa-ticket me-2"></i>
-Group Ticket
+Grup Bileti
 </a>
 </div>
 </div>
@@ -946,8 +946,8 @@ Group Ticket
 <span class="icon-big rotate-icon icon icon-purple">
 <i class="fa-solid fa-ticket"></i>
 </span>
-<h5 class="fs-16 mb-1 mt-1">New Small - $10.00</h5>
-<p class="text-gray-50 m-0"><span class="visitor-date-time">May 3, 2022</span></p>
+<h5 class="fs-16 mb-1 mt-1">En Uygun - ₺10.00</h5>
+<p class="text-gray-50 m-0"><span class="visitor-date-time">3 Mayıs, 2023</span></p>
 </div>
 </div>
 <div class="d-flex align-items-center">
@@ -963,8 +963,8 @@ Group Ticket
 <i class="fa-solid fa-ellipsis-vertical"></i>
 </button>
 <div class="dropdown-menu dropdown-menu-end">
-<a href="#" class="dropdown-item"><i class="fa-solid fa-pen me-3"></i>Edit</a>
-<a href="#" class="dropdown-item"><i class="fa-solid fa-trash-can me-3"></i>Delete</a>
+<a href="#" class="dropdown-item"><i class="fa-solid fa-pen me-3"></i>Düzenle</a>
+<a href="#" class="dropdown-item"><i class="fa-solid fa-trash-can me-3"></i>Sil</a>
 </div>
 </div>
 </div>
@@ -975,27 +975,27 @@ Group Ticket
 <div class="icon me-3">
 <i class="fa-solid fa-ticket"></i>
 </div>
-<span class="text-145">Total tickets</span>
+<span class="text-145">Toplam Bilet Sayısı</span>
 <h6 class="coupon-status">20</h6>
 </div>
 <div class="icon-box">
 <div class="icon me-3">
 <i class="fa-solid fa-users"></i>
 </div>
-<span class="text-145">Ticket limit per customer</span>
+<span class="text-145">Katılımcı Başına Bilet Sınırı</span>
 <h6 class="coupon-status">2</h6>
 </div>
 <div class="icon-box">
 <div class="icon me-3">
 <i class="fa-solid fa-cart-shopping"></i>
 </div>
-<span class="text-145">Discount</span>
+<span class="text-145">İndirim</span>
 <h6 class="coupon-status">5%</h6>
 </div>
  </div>
 </div>
 </div>
-<div class="price-ticket-card mt-4">
+{{--<div class="price-ticket-card mt-4">
 <div class="price-ticket-card-head d-md-flex flex-wrap align-items-start justify-content-between position-relative p-4">
 <div class="d-flex align-items-center top-name">
 <div class="icon-box">
@@ -1050,7 +1050,7 @@ Group Ticket
 </div>
 </div>
 </div>
-</div>
+</div>--}}
 </div>
 </div>
 </div>
@@ -1062,16 +1062,16 @@ Group Ticket
 <div class="tab-from-content">
 <div class="main-card">
 <div class="bp-title">
-<h4><i class="fa-solid fa-gear step_icon me-3"></i>Setting</h4>
+<h4><i class="fa-solid fa-gear step_icon me-3"></i>Ayarlar</h4>
 </div>
 <div class="p_30 bp-form main-form">
 <div class="form-group">
 <div class="ticket-section">
-<label class="form-label fs-16">Let's configure a few additional options for your event!</label>
-<p class="mt-2 fs-14 d-block mb-3 pe_right">Change the following settings based on your preferences to customise your event accordingly.</p>
+<label class="form-label fs-16">Etkinliğiniz için birkaç ek seçenek yapılandıralım!</label>
+<p class="mt-2 fs-14 d-block mb-3 pe_right">Etkinliğinizi buna göre özelleştirmek için tercihlerinize göre aşağıdaki ayarları değiştirin.</p>
 <div class="content-holder">
 <div class="setting-item border_bottom pb_30 pt-4">
-<div class="d-flex align-items-start">
+{{--<div class="d-flex align-items-start">
 <label class="btn-switch m-0 me-3">
 <input type="checkbox" class="" id="booking-start-time-btn" value="" checked>
 <span class="checkbox-slider"></span>
@@ -1080,7 +1080,7 @@ Group Ticket
 <label class="color-black fw-bold mb-1">I want the bookings to start immediately.</label>
 <p class="mt-2 fs-14 d-block mb-0">Disable this option if you want to start your booking from a specific date and time.</p>
 </div>
-</div>
+</div>--}}
 <div class="booking-start-time-holder" style="display:none;">
 <div class="form-group pt_30">
 <label class="form-label fs-16">Booking starts on</label>
@@ -1207,8 +1207,8 @@ Group Ticket
  <span class="checkbox-slider"></span>
 </label>
 <div class="d-flex flex-column">
-<label class="color-black fw-bold mb-1">I want the bookings to continue until my event ends.</label>
-<p class="mt-2 fs-14 d-block mb-0">Disable this option if you want to end your booking from a specific date and time.</p>
+<label class="color-black fw-bold mb-1">Etkinliğim bitene kadar rezervasyonların devam etmesini istiyorum.</label>
+<p class="mt-2 fs-14 d-block mb-0">Rezervasyonunuzu belirli bir tarih ve saatten sonlandırmak istiyorsanız bu seçeneği devre dışı bırakın.</p>
 </div>
 </div>
 <div class="booking-end-time-holder" style="display:none;">
@@ -1330,7 +1330,7 @@ Group Ticket
 </div>
 </div>
 </div>
-<div class="setting-item border_bottom pb_30 pt_30">
+{{--<div class="setting-item border_bottom pb_30 pt_30" >
 <div class="d-flex align-items-start">
 <label class="btn-switch m-0 me-3">
 <input type="checkbox" class="" id="passing-service-charge-btn" value="" checked>
@@ -1341,7 +1341,7 @@ Group Ticket
 <p class="mt-2 fs-14 d-block mb-0 pe_right">Passing your service charge means your attendees will pay your service charge in addition to the ticket price. <a href="#" class="a-link">Learn more</a></p>
 </div>
 </div>
-</div>
+</div>--}}
 <div class="setting-item border_bottom pb_30 pt_30">
 <div class="d-flex align-items-start">
 <label class="btn-switch m-0 me-3">
@@ -1349,11 +1349,11 @@ Group Ticket
 <span class="checkbox-slider"></span>
 </label>
 <div class="d-flex flex-column">
-<label class="color-black fw-bold mb-1">I do not wish to offer my customers with option to cancel their orders and receive refund.</label>
-<p class="mt-2 fs-14 d-block mb-0">Disable this slider if you want to let your customers cancel their order and select a refund policy.</p>
+<label class="color-black fw-bold mb-1">Müşterilerime siparişlerini iptal etme ve geri ödeme alma seçeneği sunmak istemiyorum.</label>
+<p class="mt-2 fs-14 d-block mb-0">Müşterilerinizin siparişlerini iptal etmelerine ve bir geri ödeme politikası seçmelerine izin vermek istiyorsanız bu kaydırıcıyı devre dışı bırakın.</p>
 </div>
 </div>
-<div class="refund-policies-holder" style="display:none;">
+{{--<div class="refund-policies-holder" style="display:none;">
 <div class="refund-policies-content border_top mt-4">
 <div class="row grid-padding-8">
 <div class="col-md-12 mb-6">
@@ -1414,9 +1414,9 @@ Group Ticket
 </div>
 </div>
 </div>
+</div>--}}
 </div>
-</div>
-<div class="setting-item border_bottom pb_30 pt_30">
+{{--<div class="setting-item border_bottom pb_30 pt_30">
 <div class="d-flex align-items-start">
 <label class="btn-switch m-0 me-3">
 <input type="checkbox" class="" id="ticket-instructions-btn" value="" checked>
@@ -1432,8 +1432,8 @@ Group Ticket
 <textarea class="form-textarea" placeholder="About"></textarea>
 </div>
 </div>
-</div>
-<div class="setting-item pb-0 pt_30">
+</div>--}}
+{{--<div class="setting-item pb-0 pt_30">
 <div class="d-flex align-items-start">
 <label class="btn-switch m-0 me-3">
 <input type="checkbox" class="" id="tags-btn" value="" checked>
@@ -1452,7 +1452,7 @@ Group Ticket
 </div>
 </div>
 </div>
-</div>
+</div>--}}
 </div>
 </div>
 </div>
@@ -1462,9 +1462,9 @@ Group Ticket
 </div>
 </div>
 <div class="step-footer step-tab-pager mt-4">
-<button data-direction="prev" class="btn btn-default btn-hover steps_btn">Previous</button>
- <button data-direction="next" class="btn btn-default btn-hover steps_btn">Next</button>
-<button data-direction="finish" class="btn btn-default btn-hover steps_btn">Create</button>
+<button data-direction="prev" class="btn btn-default btn-hover steps_btn">Geri</button>
+ <button data-direction="next" class="btn btn-default btn-hover steps_btn">İleri</button>
+<button data-direction="finish" class="btn btn-default btn-hover steps_btn">Oluştur</button>
 </div>
 </div>
 </div>
@@ -1482,7 +1482,7 @@ Group Ticket
 <script src="OwlCarousel/owl.carousel.js"></script>
 <script src="bootstrap-select/dist/js/bootstrap-select.min.js"></script>
 <script src="ckeditor5/ckeditor.js"></script>
-<script src="{{asset('js/custom.js')}}"></script>
+{{--<script src="{{asset('js/custom.js')}}"></script>--}}
 <script src="{{asset('js/night-mode.js')}}"></script>
 <script src="{{asset('js/jquery-steps.min.js')}}"></script>
 <script src="{{asset('js/datepicker.min.js')}}"></script>
@@ -1492,7 +1492,7 @@ Group Ticket
 		  onFinish: function () {
 			alert('Wizard Completed');
 		  }
-		});		
+		});
 	</script>
 <script>
 		ClassicEditor
