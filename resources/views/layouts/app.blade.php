@@ -1,44 +1,46 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<html lang="en" class="h-100">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=9">
+    <meta name="description" content="Bitirme">
+    <meta name="author" content="Bitirme">
+    <title>Barren - @yield('title', 'Basit Çevrimiçi Etkinlik Biletleme Sistemi')</title>
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
+    <link rel="icon" type="image/png" href="{{asset('assets/images/fav.png')}}">
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap" rel="stylesheet">
+    <link href='{{asset('unicons-2.0.1/css/unicons.css')}}' rel='stylesheet'>
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('css/responsive.css')}}" rel="stylesheet">
+    <link href="{{asset('css/night-mode.css')}}" rel="stylesheet">
 
-        <!-- Styles -->
-        @livewireStyles
-    </head>
-    <body class="font-sans antialiased">
-        <x-jet-banner />
+    <link href="{{asset('fontawesome-free/css/all.min.css')}}" rel="stylesheet">
+    <link href="{{asset('OwlCarousel/assets/owl.carousel.css')}}" rel="stylesheet">
+    <link href="{{asset('OwlCarousel/assets/owl.theme.default.min.css')}}" rel="stylesheet">
+    <link href="{{asset('bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('bootstrap-select/dist/css/bootstrap-select.min.css')}}" rel="stylesheet">
+    @yield('custom-css')
+</head>
+<body class="d-flex flex-column h-100">
+@include('includes.header')
+@yield('content')
 
-        <div class="min-h-screen bg-gray-100">
-            @livewire('navigation-menu')
+@include('includes.footer')
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
+{{--<script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>--}}
+<script src="{{asset('js/jquery-3.6.0.min.js')}}"></script>
+<script src="{{asset('bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('OwlCarousel/owl.carousel.js')}}"></script>
+<script src="{{asset('bootstrap-select/dist/js/bootstrap-select.min.js')}}"></script>
+<script src="{{asset('js/night-mode.js')}}"></script>
+<script src="{{asset('js/custom.js')}}"></script>
+@yield('custom-js')
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
+</body>
 
-        @stack('modals')
-
-        @livewireScripts
-    </body>
 </html>

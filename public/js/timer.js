@@ -6,24 +6,11 @@
         hour = minute * 60,
         day = hour * 24;
 
-  //I'm adding this section so I don't have to keep updating this pen every year :-)
-  //remove this if you don't need it
-  let today = new Date(),
-      dd = String(today.getDate()).padStart(2, "0"),
-      mm = String(today.getMonth() + 1).padStart(2, "0"),
-      yyyy = today.getFullYear(),
-      nextYear = yyyy + 1,
-      dayMonth = "06/01/",
-      event = dayMonth + yyyy;
-  
-  today = mm + "/" + dd + "/" + yyyy;
-  if (today > event) {
-    event = dayMonth + nextYear;
-  }
-  //end
-  
+     let event = document.getElementById("start-date").innerText;
+    console.log(event)
+
   const countDown = new Date(event).getTime(),
-      x = setInterval(function() {    
+      x = setInterval(function() {
 
         const now = new Date().getTime(),
               distance = countDown - now;

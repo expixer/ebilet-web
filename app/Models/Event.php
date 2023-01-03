@@ -73,9 +73,10 @@ class Event extends Model
      */
     public function getLowestPriceAttribute()
     {
-        return ProductInventory::whereIn('product_id',
-            Product::where('event_id', $this->id)
-                ->pluck('id'))
+        return ProductInventory::query()
+            ->whereHas('product', function ($q) {
+                $q->where('event_id', $this->id);
+            })
             ->min('price');
     }
 
@@ -89,5 +90,10 @@ class Event extends Model
     public function products()
     {
         return $this->hasMany(Product::class);
+    }
+
+    public function productInventories()
+    {
+        return $this->hasManyThrough(ProductInventory::class, Product::class);
     }
 }

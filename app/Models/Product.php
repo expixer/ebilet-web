@@ -45,6 +45,11 @@ class Product extends Model
      */
     public function productInventories()
     {
-        return $this->morphMany(ProductInventory::class, 'productable');
+        return $this->hasMany(ProductInventory::class);
+    }
+
+    public function event()
+    {
+        return $this->belongsTo(Event::class);
     }
 }

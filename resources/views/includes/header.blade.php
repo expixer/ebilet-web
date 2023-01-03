@@ -7,19 +7,19 @@
 <i class="fa-solid fa-bars"></i>
 </span>
 </button>
-<a class="navbar-brand order-1 order-lg-0 ml-lg-0 ml-2 me-auto" href="index.html">
+<a class="navbar-brand order-1 order-lg-0 ml-lg-0 ml-2 me-auto" href="{{route('home')}}">
 <div class="res-main-logo">
-<img src="assets/images/logo-icon.svg" alt="">
+<img src="{{asset('assets/images/logo-icon.svg')}}" alt="">
 </div>
 <div class="main-logo" id="logo">
-<img src="assets/images/logo.svg" alt="">
-<img class="logo-inverse" src="assets/images/dark-logo.svg" alt="">
+<img src="{{asset('assets/images/logo.svg')}}" alt="">
+<img class="logo-inverse" src="{{asset('assets/images/dark-logo.svg')}}" alt="">
 </div>
 </a>
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
 <div class="offcanvas-header">
 <div class="offcanvas-logo" id="offcanvasNavbarLabel">
-<img src="assets/images/logo-icon.svg" alt="">
+<img src="{{asset('assets/images/logo-icon.svg')}}" alt="">
 </div>
 <button type="button" class="close-btn" data-bs-dismiss="offcanvas" aria-label="Close">
 <i class="fa-solid fa-xmark"></i>
@@ -139,14 +139,14 @@ Pages
 </li>
 <li class="dropdown account-dropdown">
 <a href="#" class="account-link" role="button" id="accountClick" data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-expanded="false">
-<img src="assets/images/profile-imgs/img-13.jpg" alt="">
+<img src="{{asset('assets/images/profile-imgs/img-13.jpg')}}" alt="">
 <i class="fas fa-caret-down arrow-icon"></i>
 </a>
 <ul class="dropdown-menu dropdown-menu-account dropdown-menu-end" aria-labelledby="accountClick">
 <li>
 <div class="dropdown-account-header">
 <div class="account-holder-avatar">
-<img src="assets/images/profile-imgs/img-13.jpg" alt="">
+<img src="{{asset('assets/images/profile-imgs/img-13.jpg')}}" alt="">
 </div>
 <h5>John Doe</h5>
 <p><a href="https://www.gambolthemes.net/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b3d9dcdbddd7dcd6f3d6cbd2dec3dfd69dd0dcde">[email&#160;protected]</a></p>
