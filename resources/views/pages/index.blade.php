@@ -73,40 +73,42 @@
 <button type="button" class="control" data-filter=".concert">Konser</button>
 <button type="button" class="control" data-filter=".workshops">El İşleri</button>
 <button type="button" class="control" data-filter=".coaching_consulting">Fitness</button>
-<button type="button" class="control" data-filter=".health_Wellness">GYM</button>
+<button type="button" class="control" data-filter=".gym">GYM</button>
 <button type="button" class="control" data-filter=".volunteer">Gönüllü</button>
 <button type="button" class="control" data-filter=".sports">Spor</button>
 <button type="button" class="control" data-filter=".free">Ücretsiz</button>
 </div>
 <div class="row" data-ref="event-filter-content">
-<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mix arts concert workshops volunteer sports health_Wellness" data-ref="mixitup-target">
-<div class="main-card mt-4">
-<div class="event-thumbnail">
-<a href="venue_event_detail_view.html" class="thumbnail-img">
-<img src="assets/images/event-imgs/img-1.jpg" alt="">
-</a>
-<span class="bookmark-icon" title="Bookmark"></span>
-</div>
-<div class="event-content">
-<a href="venue_event_detail_view.html" class="event-title">A New Way Of Life</a>
-<div class="duration-price-remaining">
-<span class="duration-price">AUD $100.00*</span>
-<span class="remaining"></span>
-</div>
-</div>
-<div class="event-footer">
-<div class="event-timing">
-<div class="publish-date">
-<span><i class="fa-solid fa-calendar-day me-2"></i>15 Apr</span>
-<span class="dot"><i class="fa-solid fa-circle"></i></span>
-<span>Fri, 3.45 PM</span>
-</div>
-<span class="publish-time"><i class="fa-solid fa-clock me-2"></i>1h</span>
-</div>
-</div>
-</div>
-</div>
-<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mix business workshops volunteer sports health_Wellness" data-ref="mixitup-target">
+    @foreach($events as $event)
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mix {{ is_array($event->tags) ? implode(' ', $event->tags) : '' }}" data-ref="mixitup-target">
+            <div class="main-card mt-4">
+                <div class="event-thumbnail">
+                    <a href="{{ route('events.show', ['event' => $event->id]) }}" class="thumbnail-img">
+                        <img src="{{ $event->image }}" alt="">
+                    </a>
+                    <span class="bookmark-icon" title="Bookmark"></span>
+                </div>
+                <div class="event-content">
+                    <a href="venue_event_detail_view.html" class="event-title">{{$event->name}}</a>
+                    <div class="duration-price-remaining">
+                        <span class="duration-price">@if($event->min_price != 0)₺ {{$event->min_price}} @else Ücretsiz @endif</span>
+                        <span class="remaining"></span>
+                    </div>
+                </div>
+                <div class="event-footer">
+                    <div class="event-timing">
+                        <div class="publish-date">
+                            <span><i class="fa-solid fa-calendar-day me-2"></i>{{$event->start_date->translatedFormat('j M y')}}</span>
+                            <span class="dot"><i class="fa-solid fa-circle"></i></span>
+                            <span>{{$event->start_date->diffForHumans()}}</span>
+                        </div>
+                        <span class="publish-time"><i class="fa-solid fa-clock me-1"></i>{{ $event->end_date->diffForHumans($event->start_date, true) }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
+{{--<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mix business workshops volunteer sports health_Wellness" data-ref="mixitup-target">
 <div class="main-card mt-4">
 <div class="event-thumbnail">
 <a href="online_event_detail_view.html" class="thumbnail-img">
@@ -294,7 +296,7 @@
 </div>
 </div>
 </div>
-</div>
+</div>--}}
 </div>
 <div class="browse-btn">
 <a href="explore_events.html" class="main-btn btn-hover ">Tümünü Görüntüle</a>
@@ -870,7 +872,6 @@
 <script src="OwlCarousel/owl.carousel.js"></script>
 <script src="bootstrap-select/dist/js/bootstrap-select.min.js"></script>
 <script src="mixitup/dist/mixitup.min.js"></script>
-<script src="{{asset('js/custom.js')}}"></script>
 <script src="{{asset('js/night-mode.js')}}"></script>
 <script>
 		var containerEl = document.querySelector('[data-ref~="event-filter-content"]');

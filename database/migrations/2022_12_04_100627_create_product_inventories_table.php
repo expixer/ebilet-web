@@ -18,6 +18,12 @@ return new class extends Migration
             $table->foreignIdFor(\App\Models\Product::class);
             $table->foreignIdFor(\App\Models\Merchant::class);
             $table->unsignedInteger('quantity');
+            $table->unsignedDouble('price');
+            $table->unsignedDouble('discount')->nullable();
+            $table->string('discount_type')->nullable();
+            $table->unsignedDouble('discount_amount')->nullable();
+            $table->dateTime('discount_start_date')->nullable();
+            $table->dateTime('discount_end_date')->nullable();
             $table->unsignedTinyInteger('status');
             $table->softDeletes();
             $table->timestamps();

@@ -22,6 +22,7 @@ class ProductInventoryFactory extends Factory
             'product_id' => Product::pluck('id')->random(),
             'merchant_id' => Merchant::pluck('id')->random(),
             'quantity' => random_int(0,10),
+            'price' => random_int(0,100),
             'status' => $this->faker->numberBetween(0,1),
             'created_at' => now(),
             'updated_at' => now(),

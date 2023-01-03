@@ -2,12 +2,12 @@
 
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', function () {
-    return view('pages.index');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::resource('events', EventController::class);
 Route::get('index.html', function () {
     return view('pages.index');
 });

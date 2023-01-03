@@ -17,9 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('description');
+            $table->string('tags')->nullable();
             $table->string('location');
             $table->string('image');
-            $table->string('status');
+            $table->unsignedTinyInteger("status")->default(1);
             $table->foreignIdFor(\App\Models\Merchant::class)->nullable();
             $table->foreign("merchant_id")->references("id")->on("merchants")->onDelete("cascade");
             $table->foreignIdFor(\App\Models\Category::class)->nullable();
@@ -28,6 +29,9 @@ return new class extends Migration
             $table->dateTime('end_date');
             $table->softDeletes();
             $table->timestamps();
+        });
+        Schema::table('products', function (Blueprint $table) {
+            $table->foreign("event_id")->references("id")->on("events")->onDelete("cascade");
         });
     }
 

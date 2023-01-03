@@ -20,7 +20,7 @@
 <link href="css/responsive.css" rel="stylesheet">
 <link href="css/night-mode.css" rel="stylesheet">
 
-<link href="fontawesome-free/css/all.min.css" rel="stylesheet">
+<link href="  ""fontawesome-free/css/all.min.css" rel="stylesheet">
 <link href="OwlCarousel/assets/owl.carousel.css" rel="stylesheet">
 <link href="OwlCarousel/assets/owl.theme.default.min.css" rel="stylesheet">
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -354,7 +354,7 @@
 <script src="mixitup/dist/mixitup.min.js"></script>
 <script src="js/custom.js"></script>
 <script src="js/night-mode.js"></script>
-<script>	
+<script>
 		var containerEl = document.querySelector('[data-ref~="event-filter-content"]');
 
 		var mixer = mixitup(containerEl, {
