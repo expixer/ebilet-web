@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(\App\Models\Product::class);
             $table->foreignIdFor(\App\Models\Merchant::class);
-            $table->foreign("product_id")->references("id")->on("product")->onDelete("cascade");
-            $table->foreign("merchant_id")->references("id")->on("merchant")->onDelete("cascade");
+            $table->foreign("product_id")->references("id")->on("products")->onDelete("cascade");
+            $table->foreign("merchant_id")->references("id")->on("merchants")->onDelete("cascade");
             $table->unsignedInteger('quantity');
             $table->unsignedDouble('price');
             $table->unsignedDouble('discount')->nullable();
