@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Api\CategoryController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -8,12 +8,23 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::resource('events', EventController::class);
+Route::get('checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+Route::get('sign_in', function () {
+    return view('pages.sign_in');
+})->name('sign_in');
+
 Route::get('index.html', function () {
     return view('pages.index');
-});
-Route::get('create.html', function () {
+})->name('index');
+
+Route::get('sign_up', function () {
+    return view('pages.sign_up');
+})->name('sign_up');
+
+Route::get('create', function () {
     return view('pages.create.create');
-});
+})->name('create');
+
 Route::get('create_venue_event.html', function () {
     return view('pages.create.create_venue_event');
 });
@@ -82,25 +93,19 @@ Route::get('invoice.html', function () {
 });
 Route::get('organiser_profile_view.html', function () {
     return view('pages.organiser_profile_view');
-});
+})->name('organiser_profile_view');
 Route::get('privacy_policy.html', function () {
     return view('pages.privacy_policy');
 });
 Route::get('refer_a_friend.html', function () {
     return view('pages.refer_a_friend');
 });
-Route::get('sign_in.html', function () {
-    return view('pages.sign_in');
-});
-Route::get('sign_up.html', function () {
-    return view('pages.sign_up');
-});
 Route::get('term_and_conditions.html', function () {
     return view('pages.term_and_conditions');
 });
-Route::get('my_organisation_dashboard.html', function () {
+Route::get('my_organisation_dashboard', function () {
     return view('pages.dashboard.my_organisation_dashboard');
-});
+})->name('my_organisation_dashboard');
 Route::get('my_organisation_dashboard_about.html', function () {
     return view('pages.dashboard.my_organisation_dashboard_about');
 });
@@ -131,7 +136,7 @@ Route::get('my_organisation_dashboard_subscription.html', function () {
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
-    'verified'
+//    'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');

@@ -26,11 +26,12 @@ class EventRequest extends FormRequest
         return [
             'name' => ['required','string', 'min:3', 'max:120', 'unique:events'],
             'description' => ['required','string', 'min:20', 'max:400'],
-            'start_date' => ['required','date', 'after:today', 'before:end_date', 'date_format:Y-m-d H:i:s'],
-            'end_date' => ['required','date', 'after:start_date', 'date_format:Y-m-d H:i:s'],
+            'tags' => [],
+            'start_date' => ['required', 'date_format:Y-m-d H:i'],
+            'end_date' => ['date', 'after:start_date', 'date_format:Y-m-d H:i:s'],
             'location' => ['required','string'],
-            'image' => ['required','file', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
-            'status' => ['required','numeric', 'min:0', 'max:1'],
+            //'image' => ['required','file', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
+            'status' => ['numeric', 'default:1'],
         ];
     }
 }

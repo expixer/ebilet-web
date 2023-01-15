@@ -94,7 +94,7 @@
                                     <h5>Başlangıç: </h5>
                                     <p>{{ $event->start_date }}</p>
                                     <h5>Bitiş: </h5>
-                                    <p>{{ $event->start_date }}</p>
+                                    <p>{{ $event->end_date }}</p>
                                     {{--<div class="add-to-calendar">
                                         <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                             <i class="fa-regular fa-calendar-days me-3"></i>Add to Calendar
@@ -154,7 +154,7 @@
                                 </div>
                             </div>
                             <div class="booking-btn">
-                                <a href="checkout.html" class="main-btn btn-hover w-100">Bilet Al</a>
+                                <a href="{{route('checkout')}}" class="main-btn btn-hover w-100">Bilet Al</a>
                             </div>
                         </div>
                     </div>
