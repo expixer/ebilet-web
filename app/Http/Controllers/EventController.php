@@ -55,8 +55,9 @@ class EventController extends Controller
      * @param int $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function show(Event $event)
+    public function show($event)
     {
+        $event = Event::with('products')->find($event);
         return view('pages.venue_event_detail_view', compact('event'));
     }
 

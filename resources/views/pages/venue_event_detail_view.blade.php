@@ -118,43 +118,100 @@
                                     <a href="#"><i class="fa-solid fa-location-dot me-2"></i>Haritada Gör</a>
                                 </div>
                             </div>
-                            <div class="select-tickets-block">
-                                <h6>Biletini Seç</h6>
-                                <div class="ticket">
-                                <div class="select-ticket-action">
-                                    <div class="ticket-price">₺75.00</div>
-                                    <div class="quantity">
-                                        <div class="counter">
-                                            <span class="down" onClick='decreaseCount(event, this)'>-</span>
-                                            <input type="text" value="0">
-                                            <span class="up" onClick='increaseCount(event, this)'>+</span>
+                            @if($event->isSeat)
+                                <div class="select-tickets-block">
+                                    <h6>Biletini Seç</h6>
+                                    @foreach($event->products as $ticket)
+                                    <div class="ticket">
+                                        <div class="select-ticket-action">
+                                            ₺
+                                            <div class="ticket-price">{{$ticket->price}}</div>
+                                            <div class="quantity">
+                                                <div class="counter">
+                                                    <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                                                    <input type="text" value="0">
+                                                    <span class="up" onClick='increaseCount(event, this)'>+</span>
+                                                </div>
+                                            </div>
                                         </div>
+                                        <p>{{$ticket->description}}</p>
+                                        <hr>
+                                        </div>
+                                    @endforeach
+                                    <div class="xtotel-tickets-count">
+{{--                                        <div class="x-title">1x Bilet</div>--}}
+{{--                                        ₺<h4><span>0.00</span></h4>--}}
                                     </div>
                                 </div>
-                                <p>2 x pair hand painted leather earrings 1 x glass of bubbles / or coffee Individual
-                                    grazing box / fruit cup</p>
-                                </div>
-                                <div class="ticket">
-                                <div class="select-ticket-action">
-                                    <div class="ticket-price">₺75.00</div>
-                                    <div class="quantity">
-                                        <div class="counter">
-                                            <span class="down" onClick='decreaseCount(event, this)'>-</span>
-                                            <input type="text" value="0">
-                                            <span class="up" onClick='increaseCount(event, this)'>+</span>
-                                        </div>
+                            @else
+                                <div class="container container-seat">
+                                    <div class="screen"></div>
+
+                                    <div class="row">
+                                        <div class="seat"></div>
+                                        <div class="seat"></div>
+                                        <div class="seat"></div>
+                                        <div class="seat"></div>
+                                        <div class="seat"></div>
+                                        <div class="seat"></div>
+                                        <div class="seat"></div>
+                                        <div class="seat"></div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="seat"></div>
+                                        <div class="seat"></div>
+                                        <div class="seat"></div>
+                                        <div class="seat sold"></div>
+                                        <div class="seat sold"></div>
+                                        <div class="seat"></div>
+                                        <div class="seat"></div>
+                                        <div class="seat"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="seat"></div>
+                                        <div class="seat"></div>
+                                        <div class="seat"></div>
+                                        <div class="seat"></div>
+                                        <div class="seat"></div>
+                                        <div class="seat"></div>
+                                        <div class="seat sold"></div>
+                                        <div class="seat sold"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="seat"></div>
+                                        <div class="seat"></div>
+                                        <div class="seat"></div>
+                                        <div class="seat"></div>
+                                        <div class="seat"></div>
+                                        <div class="seat"></div>
+                                        <div class="seat"></div>
+                                        <div class="seat"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="seat"></div>
+                                        <div class="seat"></div>
+                                        <div class="seat"></div>
+                                        <div class="seat sold"></div>
+                                        <div class="seat sold"></div>
+                                        <div class="seat"></div>
+                                        <div class="seat"></div>
+                                        <div class="seat"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="seat"></div>
+                                        <div class="seat"></div>
+                                        <div class="seat"></div>
+                                        <div class="seat"></div>
+                                        <div class="seat sold"></div>
+                                        <div class="seat sold"></div>
+                                        <div class="seat sold"></div>
+                                        <div class="seat"></div>
                                     </div>
                                 </div>
-                                <p>2 x pair hand painted leather earrings 1 x glass of bubbles / or coffee Individual
-                                    grazing box / fruit cup</p>
-                                </div>
-                                <div class="xtotel-tickets-count">
-                                    <div class="x-title">1x Bilet</div>
-                                    <h4><span>₺0.00</span></h4>
-                                </div>
-                            </div>
+                            @endif
                             <div class="booking-btn">
-                                <a href="{{route('checkout')}}" class="main-btn btn-hover w-100">Bilet Al</a>
+                                <a href="{{route('checkout.index')}}" class="main-btn btn-hover w-100">Bilet Al</a>
                             </div>
                         </div>
                     </div>
@@ -164,7 +221,9 @@
     </div>
 @endsection
 @section('custom-css')
+    <link rel="stylesheet" href="{{asset('css/seat-style.css')}}"/>
 @endsection
 @section('custom-js')
     <script src="{{asset('js/timer.js')}}"></script>
+    <script src="{{asset('js/seat-script.js')}}"></script>
 @endsection

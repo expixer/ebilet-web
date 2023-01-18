@@ -54,6 +54,7 @@ class Event extends Model
         'end_date',
         'location',
         'image',
+        'type',
         'status',
         'merchant_id',
         'category_id',
@@ -95,5 +96,10 @@ class Event extends Model
     public function productInventories()
     {
         return $this->hasManyThrough(ProductInventory::class, Product::class);
+    }
+
+    public function getIsSeatAttribute()
+    {
+        return $this->type < 7;
     }
 }

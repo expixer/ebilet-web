@@ -18,8 +18,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('description');
             $table->string('tags')->nullable();
-            $table->string('location');
+            $table->string('location')->nullable();
             $table->string('image');
+            $table->unsignedTinyInteger('type',);
             $table->unsignedTinyInteger("status")->default(1);
             $table->foreignIdFor(\App\Models\Merchant::class)->nullable();
             $table->foreign("merchant_id")->references("id")->on("merchants")->onDelete("cascade");
