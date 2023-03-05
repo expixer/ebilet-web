@@ -18,4 +18,14 @@ class HomeController extends Controller
             ->get(['events.*', \DB::raw('min(product_inventories.price) as min_price')]);
         return view('pages.index', compact('events'));
     }
+
+    public function create()
+    {
+        return view('pages.create.create_venue_event');
+    }
+
+    public function checkout()
+    {
+        return view('pages.checkout');
+    }
 }

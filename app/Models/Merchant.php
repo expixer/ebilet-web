@@ -33,4 +33,10 @@ class Merchant extends Model
     use HasFactory;
 
     protected $fillable = ['name', 'description', 'location', 'image', 'status', 'merchant_id', 'category_id', 'start_date', 'end_date'];
+
+    public function events()
+    {
+        return $this->hasMany(Event::class);
+    }
+
 }

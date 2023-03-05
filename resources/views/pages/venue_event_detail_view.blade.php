@@ -21,7 +21,7 @@
                                     {{--<span class="event-type-name details-hr">Başlangıcı <span
                                             class="ev-event-date">{{$event->start_date->translatedFormat('jS F l Y H:i')}}</span></span>--}}
                                     <span
-                                        class="event-type-name details-hr">{{ $event->end_date->diffForHumans($event->start_date, true) }}</span>
+                                        class="event-type-name details-hr">{{ $event->end_date->diffForHumans($event->start_date, true) }} sürecek</span>
                                 </div>
                             </div>
                         </div>
@@ -81,7 +81,7 @@
                                 </div>
                                 <div class="event-dt-right-content">
                                     <h4>Kim tarafından?</h4>
-                                    <h5>The Teeny Rabbit</h5>
+                                    <h5>{{$event->merchant->merchant_name}}</h5>
                                     {{--<a href="attendee_profile_view.html">View Profile</a>--}}
                                 </div>
                             </div>
@@ -115,104 +115,64 @@
                                 <div class="event-dt-right-content">
                                     <h4>Nerede?</h4>
                                     <h5 class="mb-0">{{ $event->location }}</h5>
-                                    <a href="#"><i class="fa-solid fa-location-dot me-2"></i>Haritada Gör</a>
+{{--                                    <a href="#"><i class="fa-solid fa-location-dot me-2"></i>Haritada Gör</a>--}}
                                 </div>
                             </div>
                             @if($event->isSeat)
                                 <div class="select-tickets-block">
                                     <h6>Biletini Seç</h6>
                                     @foreach($event->products as $ticket)
-                                    <div class="ticket">
-                                        <div class="select-ticket-action">
-                                            ₺
-                                            <div class="ticket-price">{{$ticket->price}}</div>
-                                            <div class="quantity">
-                                                <div class="counter">
-                                                    <span class="down" onClick='decreaseCount(event, this)'>-</span>
-                                                    <input type="text" value="0">
-                                                    <span class="up" onClick='increaseCount(event, this)'>+</span>
+                                        <div class="ticket">
+                                            <div class="select-ticket-action">
+                                                ₺
+                                                <div class="ticket-price">{{$ticket->price}}</div>
+                                                <div class="quantity">
+                                                    <div class="counter">
+                                                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                                                        <input type="text" value="0">
+                                                        <span class="up" onClick='increaseCount(event, this)'>+</span>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <p>{{$ticket->description}}</p>
-                                        <hr>
+                                            <p>{{$ticket->description}}</p>
+                                            <hr>
                                         </div>
                                     @endforeach
                                     <div class="xtotel-tickets-count">
-{{--                                        <div class="x-title">1x Bilet</div>--}}
-{{--                                        ₺<h4><span>0.00</span></h4>--}}
+                                        {{--                                        <div class="x-title">1x Bilet</div>--}}
+                                        {{--                                        ₺<h4><span>0.00</span></h4>--}}
                                     </div>
                                 </div>
                             @else
-                                <div class="container container-seat">
-                                    <div class="screen"></div>
+                                <form id="checkout" action="{{route('checkout.index')}}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="event_id" value="{{$event->id}}">
+                                    <input type="hidden" name="product_id" value="{{$event->products[0]->id ?? 0}}">
+                                    <div class="container container-seat">
+                                        <div class="screen"></div>
 
-                                    <div class="row">
-                                        <div class="seat"></div>
-                                        <div class="seat"></div>
-                                        <div class="seat"></div>
-                                        <div class="seat"></div>
-                                        <div class="seat"></div>
-                                        <div class="seat"></div>
-                                        <div class="seat"></div>
-                                        <div class="seat"></div>
+                                        <div style="margin-left: 12px">
+                                            @for($i=0; $i<6; $i++)
+                                                <div class="row">
+                                                    <div class="seat {{$event->seats[($i * 8)] ? 'sold' : ''}}"><input type="hidden" name="seats[]" value="{{ ($i * 8) + 1  }}" > </div>
+                                                    <div class="seat {{$event->seats[($i * 8) + 1] ? 'sold' : ''}}"><input type="hidden" name="seats[]" value="{{ ($i * 8) + 2  }}" > </div>
+                                                    <div class="seat {{$event->seats[($i * 8) + 2] ? 'sold' : ''}}"><input type="hidden" name="seats[]" value="{{ ($i * 8) + 3  }}" > </div>
+                                                    <div class="seat {{$event->seats[($i * 8) + 3] ? 'sold' : ''}}"><input type="hidden" name="seats[]" value="{{ ($i * 8) + 4  }}" > </div>
+                                                    <div class="seat {{$event->seats[($i * 8) + 4] ? 'sold' : ''}}"><input type="hidden" name="seats[]" value="{{ ($i * 8) + 5  }}" > </div>
+                                                    <div class="seat {{$event->seats[($i * 8) + 5] ? 'sold' : ''}}"><input type="hidden" name="seats[]" value="{{ ($i * 8) + 6  }}" > </div>
+                                                    <div class="seat {{$event->seats[($i * 8) + 6] ? 'sold' : ''}}"><input type="hidden" name="seats[]" value="{{ ($i * 8) + 7  }}" > </div>
+                                                    <div class="seat {{$event->seats[($i * 8) + 7] ? 'sold' : ''}}"><input type="hidden" name="seats[]" value="{{ ($i * 8) + 8  }}" > </div>
+                                                </div>
+                                            @endfor
+                                        </div>
                                     </div>
-
-                                    <div class="row">
-                                        <div class="seat"></div>
-                                        <div class="seat"></div>
-                                        <div class="seat"></div>
-                                        <div class="seat sold"></div>
-                                        <div class="seat sold"></div>
-                                        <div class="seat"></div>
-                                        <div class="seat"></div>
-                                        <div class="seat"></div>
+                                    @endif
+                                    <div class="booking-btn">
+                                        <button type="submit" href="{{route('checkout.index')}}"
+                                                class="main-btn btn-hover w-100">Bilet Al
+                                        </button>
                                     </div>
-                                    <div class="row">
-                                        <div class="seat"></div>
-                                        <div class="seat"></div>
-                                        <div class="seat"></div>
-                                        <div class="seat"></div>
-                                        <div class="seat"></div>
-                                        <div class="seat"></div>
-                                        <div class="seat sold"></div>
-                                        <div class="seat sold"></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="seat"></div>
-                                        <div class="seat"></div>
-                                        <div class="seat"></div>
-                                        <div class="seat"></div>
-                                        <div class="seat"></div>
-                                        <div class="seat"></div>
-                                        <div class="seat"></div>
-                                        <div class="seat"></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="seat"></div>
-                                        <div class="seat"></div>
-                                        <div class="seat"></div>
-                                        <div class="seat sold"></div>
-                                        <div class="seat sold"></div>
-                                        <div class="seat"></div>
-                                        <div class="seat"></div>
-                                        <div class="seat"></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="seat"></div>
-                                        <div class="seat"></div>
-                                        <div class="seat"></div>
-                                        <div class="seat"></div>
-                                        <div class="seat sold"></div>
-                                        <div class="seat sold"></div>
-                                        <div class="seat sold"></div>
-                                        <div class="seat"></div>
-                                    </div>
-                                </div>
-                            @endif
-                            <div class="booking-btn">
-                                <a href="{{route('checkout.index')}}" class="main-btn btn-hover w-100">Bilet Al</a>
-                            </div>
+                                </form>
                         </div>
                     </div>
                 </div>
@@ -226,4 +186,18 @@
 @section('custom-js')
     <script src="{{asset('js/timer.js')}}"></script>
     <script src="{{asset('js/seat-script.js')}}"></script>
+    <script>
+        $(document).ready(function () {
+            $('#checkout').submit(function (e) {
+                e.preventDefault();
+                $('.seat.sold').each(function () {
+                    $(this).find('input').val(0);
+                });
+                $('.seat:not(.selected)').each(function () {
+                    $(this).find('input').val(0);
+                });
+                $(this).unbind('submit').submit();
+            });
+        });
+    </script>
 @endsection

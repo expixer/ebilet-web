@@ -49,6 +49,7 @@ class EventController extends Controller
         return response()->json($event, 201);
     }
 
+
     /**
      * Display the specified resource.
      *
@@ -57,7 +58,11 @@ class EventController extends Controller
      */
     public function show($event)
     {
-        $event = Event::with('products')->find($event);
+        $event = Event::with(['products', 'merchant'])->find($event);
+//        $seats = $event->seats;
+//        $seats[1] = 12;
+//        $event->seats = $seats;
+//        $event->update();
         return view('pages.venue_event_detail_view', compact('event'));
     }
 

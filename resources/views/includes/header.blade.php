@@ -40,7 +40,7 @@
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="{{asset('index')}}">Ana Sayfa</a>
                             </li>
-                            <li class="nav-item dropdown">
+                            {{--<li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                    aria-expanded="false">
                                     Keşfet
@@ -54,10 +54,10 @@
                                             Event
                                             Detail View</a></li>
                                 </ul>
-                            </li>
-                            <li class="nav-item">
+                            </li>--}}
+{{--                            <li class="nav-item">
                                 <a class="nav-link" href="{{asset('pricing')}}">Ücretlendirme</a>
-                            </li>
+                            </li>--}}
                             {{--<li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Blog
@@ -67,7 +67,7 @@
                             <li><a class="dropdown-item" href="blog_detail_view.html">Blog Detail View</a></li>
                             </ul>
                             </li>--}}
-                            <li class="nav-item dropdown">
+{{--                            <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                    aria-expanded="false">
                                     Yardım
@@ -77,7 +77,7 @@
                                     <li><a class="dropdown-item" href="{{asset('help_center')}}">Yardım Merkezi</a></li>
                                     <li><a class="dropdown-item" href="{{asset('contact_us')}}">İletişime Geçin</a></li>
                                 </ul>
-                            </li>
+                            </li>--}}
                             @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('sign_in')}}">Giriş Yap</a>
@@ -167,10 +167,10 @@
                                             <div class="account-holder-avatar">
                                                 <img src="{{asset('assets/images/profile-imgs/img-13.jpg')}}" alt="">
                                             </div>
-                                            <h5>John Doe</h5>
+                                            <h5>{{auth()->user()->name}}</h5>
                                             <p><a href="https://www.gambolthemes.net/cdn-cgi/l/email-protection"
                                                   class="__cf_email__"
-                                                  data-cfemail="b3d9dcdbddd7dcd6f3d6cbd2dec3dfd69dd0dcde">[email&#160;protected]</a>
+                                                  data-cfemail="b3d9dcdbddd7dcd6f3d6cbd2dec3dfd69dd0dcde">{{auth()->user()->email}}</a>
                                             </p>
                                         </div>
                                     </li>

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('description');
             $table->string('tags')->nullable();
+            $table->string('tags', 600)->nullable();
             $table->string('location')->nullable();
             $table->string('image');
             $table->unsignedTinyInteger('type',);

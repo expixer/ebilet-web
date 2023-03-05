@@ -50,6 +50,7 @@ class Event extends Model
         'name',
         'description',
         'tags',
+        'seats',
         'start_date',
         'end_date',
         'location',
@@ -63,6 +64,7 @@ class Event extends Model
         'start_date' => 'datetime',
         'end_date' => 'datetime',
         'tags' => 'array',
+        'seats' => 'array',
     ];
 
     //protected $appends = ['lowest_price'];
@@ -92,6 +94,10 @@ class Event extends Model
     {
         return $this->hasMany(Product::class);
     }
+    public function merchant()
+    {
+        return $this->belongsTo(Merchant::class);
+    }
 
     public function productInventories()
     {
@@ -100,6 +106,6 @@ class Event extends Model
 
     public function getIsSeatAttribute()
     {
-        return $this->type < 7;
+        return $this->type >= 7;
     }
 }

@@ -7,8 +7,12 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/index', [HomeController::class, 'index'])->name('index');
 Route::resource('events', EventController::class);
-Route::get('checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+Route::post('checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+Route::get('/create', [HomeController::class, 'create'])->name('create');
+Route::post('/pay-confirm', [CheckoutController::class, 'payConfirm'])->name('booking.store');
+
 Route::get('sign_in', function () {
     return view('pages.sign_in');
 })->name('sign_in');
@@ -21,7 +25,7 @@ Route::get('sign_up', function () {
     return view('pages.sign_up');
 })->name('sign_up');
 
-Route::get('create', function () {
+Route::get('creates', function () {
     return view('pages.create.create');
 })->name('create');
 
