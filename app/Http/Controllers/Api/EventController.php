@@ -16,7 +16,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        return EventResource::collection(Event::all());
+        return EventResource::collection(Event::with(['products', 'merchant'])->get());
     }
 
     /**
@@ -38,9 +38,9 @@ class EventController extends Controller
      * @param Event $event
      * @return EventResource
      */
-    public function show(Event $event)
+    public function show($event)
     {
-        return new EventResource($event);
+        return new EventResource(Event::with(['products', 'merchant'])->find($event));
     }
 
     /**

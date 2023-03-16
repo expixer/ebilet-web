@@ -551,26 +551,15 @@
                                                             <label class="form-label fs-16">Etkinlik için bir etiket seçin.*</label>
                                                             <p class="mt-2 d-block fs-14 mb-3">İlgili etiketleri seçmek, etkinliğinizin keşfedilebilirliğini artırmanıza yardımcı olur.</p>
                                                             <select id="tags" name="tags" class="selectpicker" multiple="" data-size="5" title="Etiket Seç" data-live-search="true">
-                                                                <option value="01">Sanat</option>
-                                                                <option value="02">İş</option>
-                                                                <option value="03">Coaching and Consulting</option>
-                                                                <option value="04">Community and Culture</option>
-                                                                <option value="05">Entrepreneurship</option>
-                                                                <option value="06">Education and Training</option>
-                                                                <option value="07">Family and Friends</option>
-                                                                <option value="08">Fashion and Beauty</option>
-                                                                <option value="09">Film and Entertainment</option>
-                                                                <option value="10">Food and Drink</option>
-                                                                <option value="11">Government and Politics</option>
-                                                                <option value="12">Health and Wellbeing</option>
-                                                                <option value="13">Hobbies and Interest</option>
-                                                                <option value="14">Music and Theater</option>
-                                                                <option value="15">Religion and Spirituality</option>
-                                                                <option value="16">Science and Technology</option>
-                                                                <option value="17">Sports and Fitness</option>
-                                                                <option value="18">Travel and Outdoor</option>
-                                                                <option value="19">Visual Arts</option>
-                                                                <option value="20">Others</option>
+                                                                <option value="arts">Sanat</option>
+                                                                <option value="business">İş</option>
+                                                                <option value="concert">Konser</option>
+                                                                <option value="workshops">El</option>
+                                                                <option value="coaching_consulting">Fitness</option>
+                                                                <option value="gym">GYM</option>
+                                                                <option value="volunteer">Gönüllü</option>
+                                                                <option value="sports">Spor</option>
+                                                                <option value="free">Ücretsiz</option>
                                                             </select>
                                                         </div>
                                                         <div class="form-group border_bottom pt_30 pb_30">
