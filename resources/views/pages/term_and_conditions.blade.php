@@ -442,7 +442,7 @@ Barren offers the following services to event organisers (“services”):
 <div class="row">
 <div class="col-12">
 <div class="footer-copyright-text">
-<p class="mb-0">© 2022, <strong>Barren</strong>. All rights reserved. Powered by Gambolthemes</p>
+<p class="mb-0">© 2022, <strong>Barren</strong>. All rights reserved. Bitirme Ödevi İçin Hazırlanmıştır</p>
 </div>
 </div>
 </div>

@@ -112,4 +112,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Merchant::class);
     }
+
+    public function isMerchant()
+    {
+        return $this->merchant_id !== null;
+    }
 }

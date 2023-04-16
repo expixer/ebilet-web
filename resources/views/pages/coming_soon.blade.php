@@ -55,7 +55,7 @@
 <p class="mb-0 mt-1 text-start fs-12">No Spam, we promise.</p>
 </form>
 <div class="copyright-footer mt-5">
-© 2022, Barren. All rights reserved. Powered by Gambolthemes
+© 2022, Barren. All rights reserved. Bitirme Ödevi İçin Hazırlanmıştır
 </div>
 </div>
 </div>

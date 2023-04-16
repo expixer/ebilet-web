@@ -71,7 +71,7 @@
 </div>
 </div>
 <div class="copyright-footer">
-© 2022, Barren. All rights reserved. Powered by Gambolthemes
+© 2022, Barren. All rights reserved. Bitirme Ödevi İçin Hazırlanmıştır
 </div>
 </div>
 </div>

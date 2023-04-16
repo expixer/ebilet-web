@@ -145,15 +145,17 @@
                         </div>
                     </div>
                 </div>
+                <div class="right-header order-2">
+                    <ul class="align-self-stretch">
                 @auth
-                    <div class="right-header order-2">
-                        <ul class="align-self-stretch">
-                            <li>
-                                <a href="/create" class="create-btn btn-hover">
-                                    <i class="fa-solid fa-calendar-days"></i>
-                                    <span>Etkinlik Oluştur</span>
-                                </a>
-                            </li>
+                            @if(auth()->user()->isMerchant())
+                                <li>
+                                    <a href="/create" class="create-btn btn-hover">
+                                        <i class="fa-solid fa-calendar-days"></i>
+                                        <span>Etkinlik Oluştur</span>
+                                    </a>
+                                </li>
+                            @endif
                             <li class="dropdown account-dropdown">
                                 <a href="#" class="account-link" role="button" id="accountClick"
                                    data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-expanded="false">
