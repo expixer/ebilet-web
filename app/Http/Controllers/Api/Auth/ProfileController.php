@@ -11,7 +11,7 @@ class ProfileController extends Controller
 {
     public function show(Request $request): \Illuminate\Http\JsonResponse
     {
-        return response()->json($request->user()->only('name', 'email'));
+        return response()->json($request->user());
     }
 
     public function update(Request $request): \Illuminate\Http\JsonResponse
