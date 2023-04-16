@@ -68,6 +68,14 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'merchant_id',
+        'instagram',
+        'facebook',
+        'twitter',
+        'linkedin',
+        'youtube',
+        'website',
+        'phone',
     ];
 
     /**
@@ -99,4 +107,9 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function merchant()
+    {
+        return $this->belongsTo(Merchant::class);
+    }
 }

@@ -109,7 +109,7 @@
                             <a class="dropdown-item submenu-item" href="#">Create Event</a>
                             <ul class="submenu dropdown-menu">
                             <li><a class="dropdown-item pe-5" href="create.html">Create</a></li>
-                            <li><a class="dropdown-item pe-5" href="create_venue_event.html">Create Venue Event</a></li>
+                            <li><a class="dropdown-item pe-5" href="create_venue_event">Create Venue Event</a></li>
                             <li><a class="dropdown-item pe-5" href="create_online_event.html">Create Online Event</a></li>
                             </ul>
                             </li>
@@ -122,7 +122,7 @@
                             </li>
                             <li><a class="dropdown-item" href="booking_confirmed.html">Booking Confirmed</a></li>
                             <li><a class="dropdown-item" href="attendee_profile_view.html">Attendee Profile View</a></li>
-                            <li><a class="dropdown-item" href="organiser_profile_view.html">Organiser Profile View</a></li>
+                            <li><a class="dropdown-item" href="organiser_profile_view">Organiser Profile View</a></li>
                             <li><a class="dropdown-item" href="my_organisation_dashboard.html">Organization Dashboard</a></li>
                             <li><a class="dropdown-item" href="sell_tickets_online.html">Sell Tickets Online</a></li>
                             <li><a class="dropdown-item" href="refer_a_friend.html">Refer a Friend</a></li>
@@ -149,7 +149,7 @@
                     <div class="right-header order-2">
                         <ul class="align-self-stretch">
                             <li>
-                                <a href="create.html" class="create-btn btn-hover">
+                                <a href="/create" class="create-btn btn-hover">
                                     <i class="fa-solid fa-calendar-days"></i>
                                     <span>Etkinlik Oluştur</span>
                                 </a>

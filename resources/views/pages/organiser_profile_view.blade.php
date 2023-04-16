@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en" class="h-100">
 
-<!-- Mirrored from www.gambolthemes.net/html-items/barren-html/disable-demo-link/organiser_profile_view.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 31 Dec 2022 13:37:43 GMT -->
+<!-- Mirrored from www.gambolthemes.net/html-items/barren-html/disable-demo-link/organiser_profile_view by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 31 Dec 2022 13:37:43 GMT -->
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -808,5 +808,5 @@
 <script src="js/night-mode.js"></script>
 </body>
 
-<!-- Mirrored from www.gambolthemes.net/html-items/barren-html/disable-demo-link/organiser_profile_view.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 31 Dec 2022 13:37:43 GMT -->
+<!-- Mirrored from www.gambolthemes.net/html-items/barren-html/disable-demo-link/organiser_profile_view by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 31 Dec 2022 13:37:43 GMT -->
 </html>

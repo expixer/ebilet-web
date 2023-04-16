@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <form id="add-event-form" action="{{route('events.store')}}" method="post">
+    <form id="add-event-form" action="{{route('events.store')}}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="modal fade" id="singleTicketModal" tabindex="-1" aria-labelledby="singleTicketModalLabel" aria-hidden="false">
         <div class="modal-dialog modal-lg">
@@ -545,12 +545,12 @@
                                                         <div class="form-group border_bottom pb_30">
                                                             <label class="form-label fs-16">Etkinliğe bir isim verin.*</label>
                                                             <p class="mt-2 d-block fs-14 mb-3">İnsanların etkinliğinize ilgisini çekebilecek bir isim girin. </p>
-                                                            <input name="name" class="form-control h_50" type="text" placeholder="Etkinlik Adı" value="">
+                                                            <input name="name" id="name" class="form-control h_50" type="text" placeholder="Etkinlik Adı" value="">
                                                         </div>
                                                         <div class="form-group border_bottom pt_30 pb_30">
                                                             <label class="form-label fs-16">Etkinlik için bir etiket seçin.*</label>
                                                             <p class="mt-2 d-block fs-14 mb-3">İlgili etiketleri seçmek, etkinliğinizin keşfedilebilirliğini artırmanıza yardımcı olur.</p>
-                                                            <select id="tags" name="tags" class="selectpicker" multiple="" data-size="5" title="Etiket Seç" data-live-search="true">
+                                                            <select id="tags" name="tags[]" class="selectpicker" multiple="" data-size="5" title="Etiket Seç" data-live-search="true">
                                                                 <option value="arts">Sanat</option>
                                                                 <option value="business">İş</option>
                                                                 <option value="concert">Konser</option>
@@ -569,7 +569,8 @@
                                                                 <div class="col-md-6">
                                                                     <label class="form-label mt-3 fs-6">Etkinlik Tarihi.*</label>
                                                                     <div class="loc-group position-relative">
-                                                                        <input id="start_date" name="start_date" class="form-control h_50 datepicker-here" data-language="en" type="text" placeholder="MM/DD/YYYY" value="">
+                                                                        <input id="start_date_tmp" name="start_date_tmp" class="form-control h_50 datepicker-here" data-language="en" type="text" placeholder="MM/DD/YYYY" value="">
+                                                                        <input hidden id="start_date" name="start_date">
                                                                         <span class="absolute-icon"><i class="fa-solid fa-calendar-days"></i></span>
                                                                     </div>
                                                                 </div>
@@ -709,11 +710,11 @@
                                                                 <div class="default-event-thumb">
                                                                     <div class="default-event-thumb-btn">
                                                                         <div class="thumb-change-btn">
-                                                                            <input type="file" id="thumb-img">
+                                                                            <input onchange="readURL(this);" type="file" name="image" id="thumb-img">
                                                                             <label for="thumb-img">Görseli Değiştir</label>
                                                                         </div>
                                                                     </div>
-                                                                    <img src="{{asset('assets/images/banners/custom-img.jpg')}}" alt="">
+                                                                    <img id="file-upload-image" src="{{asset('assets/images/banners/custom-img.jpg')}}" alt="">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1455,15 +1456,44 @@
                 (hours.toString().length === 1 ? '0' + hours : hours) + ':' +
                 (minutes.toString().length === 1 ? minutes + '0' : minutes);
         }
+        function readURL(input) {
+
+                let reader = new FileReader();
+
+                reader.onload = function(e) {
+                    $('#file-upload-image').attr('src', e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+        }
+
         $(document).ready(function() {
             $('#add-event-form').submit(function(event) {
                 event.preventDefault();
-                const start_date = $('#start_date');
-                start_date.val(formatDate(createDateFromFormat(start_date.val(), $('#start-time').val())));
+                let start_date = $('#start_date');
+                let start_time = $('#start-time');
+                let start_date_tmp = $('#start_date_tmp');
+                start_date.val(formatDate(createDateFromFormat(start_date_tmp.val(), start_time.val())));
+
+                var fd = new FormData();
+                var files = $('#thumb-img')[0].files[0];
+                fd.append('image',files);
+                fd.append('name',$('#name').val());
+                fd.append('description',$('#description').val());
+                fd.append('start_date',start_date.val());
+                fd.append('location',$('#location').val());
+                fd.append('address-line1',$('#address-line1').val());
+                fd.append('address-line2',$('#address-line2').val());
+                fd.append('city',$('#city').val());
+                fd.append('country',$('#country').val());
+                fd.append('tags',$('#tags').val());
+                fd.append('duration',$('#duration').val());
+                fd.append('_token', '{{csrf_token()}}');
                 $.ajax({
                     type: 'POST',
                     url: '{{ROUTE('events.store')}}',
-                    data: $('#add-event-form').serialize(),
+                    data: fd,
+                    contentType:false,
+                    processData:false,
                     success: function(response) {
                         window.location.replace("{{route('home')}}");
                     }

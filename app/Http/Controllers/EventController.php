@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\EventRequest;
 use App\Models\Event;
+use Arr;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -37,11 +38,14 @@ class EventController extends Controller
      */
     public function store(EventRequest $request)
     {
+        $path = $request->file('image')->storeAs('events', $request->name . '-'. time() . '.jpg', 'public');
         $event = Event::create(
             array_merge(
-                $request->validated(),
+                Arr::except($request->validated(), ['image']),
                 [
-                    'end_date' => Carbon::createFromFormat('Y-m-d H:i', $request->start_date)->addMinutes($request->duration)
+                    'image' => $path,
+                    'end_date' => Carbon::createFromFormat('Y-m-d H:i', $request->start_date)->addMinutes($request->duration),
+                    'merchant_id' => auth()->user()->merchant->id,
                 ]
             )
         );
@@ -63,6 +67,7 @@ class EventController extends Controller
 //        $seats[1] = 12;
 //        $event->seats = $seats;
 //        $event->update();
+//        dd(is_array($event->seats));
         return view('pages.venue_event_detail_view', compact('event'));
     }
 

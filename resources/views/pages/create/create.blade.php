@@ -65,7 +65,7 @@
 <i class="fa-solid fa-location-dot"></i>
 </div>
 <h4>Create an Venue Event</h4>
-<a href="create_venue_event.html" class="main-btn btn-hover h_40 w-100">Create<i class="fa-solid fa-arrow-right ms-2"></i></a>
+<a href="events/create" class="main-btn btn-hover h_40 w-100">Create<i class="fa-solid fa-arrow-right ms-2"></i></a>
 </div>
 </div>
 </div>

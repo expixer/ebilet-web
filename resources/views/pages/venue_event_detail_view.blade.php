@@ -119,7 +119,7 @@
                                 </div>
                             </div>
                             @if($event->isSeat)
-                                <div class="select-tickets-block">
+                                <div class="select-tickets-block" style="max-height: 400px;overflow-y: scroll;">
                                     <h6>Biletini Seç</h6>
                                     @foreach($event->products as $ticket)
                                         <div class="ticket">
@@ -152,18 +152,20 @@
                                         <div class="screen"></div>
 
                                         <div style="margin-left: 12px">
-                                            @for($i=0; $i<6; $i++)
-                                                <div class="row">
-                                                    <div class="seat {{$event->seats[($i * 8)] ? 'sold' : ''}}"><input type="hidden" name="seats[]" value="{{ ($i * 8) + 1  }}" > </div>
-                                                    <div class="seat {{$event->seats[($i * 8) + 1] ? 'sold' : ''}}"><input type="hidden" name="seats[]" value="{{ ($i * 8) + 2  }}" > </div>
-                                                    <div class="seat {{$event->seats[($i * 8) + 2] ? 'sold' : ''}}"><input type="hidden" name="seats[]" value="{{ ($i * 8) + 3  }}" > </div>
-                                                    <div class="seat {{$event->seats[($i * 8) + 3] ? 'sold' : ''}}"><input type="hidden" name="seats[]" value="{{ ($i * 8) + 4  }}" > </div>
-                                                    <div class="seat {{$event->seats[($i * 8) + 4] ? 'sold' : ''}}"><input type="hidden" name="seats[]" value="{{ ($i * 8) + 5  }}" > </div>
-                                                    <div class="seat {{$event->seats[($i * 8) + 5] ? 'sold' : ''}}"><input type="hidden" name="seats[]" value="{{ ($i * 8) + 6  }}" > </div>
-                                                    <div class="seat {{$event->seats[($i * 8) + 6] ? 'sold' : ''}}"><input type="hidden" name="seats[]" value="{{ ($i * 8) + 7  }}" > </div>
-                                                    <div class="seat {{$event->seats[($i * 8) + 7] ? 'sold' : ''}}"><input type="hidden" name="seats[]" value="{{ ($i * 8) + 8  }}" > </div>
-                                                </div>
-                                            @endfor
+                                            @if(is_array($event->seats))
+                                                @for($i=0; $i<6; $i++)
+                                                    <div class="row">
+                                                        <div class="seat {{$event->seats[($i * 8)] ? 'sold' : ''}}"><input type="hidden" name="seats[]" value="{{ ($i * 8) + 1  }}" > </div>
+                                                        <div class="seat {{$event->seats[($i * 8) + 1] ? 'sold' : ''}}"><input type="hidden" name="seats[]" value="{{ ($i * 8) + 2  }}" > </div>
+                                                        <div class="seat {{$event->seats[($i * 8) + 2] ? 'sold' : ''}}"><input type="hidden" name="seats[]" value="{{ ($i * 8) + 3  }}" > </div>
+                                                        <div class="seat {{$event->seats[($i * 8) + 3] ? 'sold' : ''}}"><input type="hidden" name="seats[]" value="{{ ($i * 8) + 4  }}" > </div>
+                                                        <div class="seat {{$event->seats[($i * 8) + 4] ? 'sold' : ''}}"><input type="hidden" name="seats[]" value="{{ ($i * 8) + 5  }}" > </div>
+                                                        <div class="seat {{$event->seats[($i * 8) + 5] ? 'sold' : ''}}"><input type="hidden" name="seats[]" value="{{ ($i * 8) + 6  }}" > </div>
+                                                        <div class="seat {{$event->seats[($i * 8) + 6] ? 'sold' : ''}}"><input type="hidden" name="seats[]" value="{{ ($i * 8) + 7  }}" > </div>
+                                                        <div class="seat {{$event->seats[($i * 8) + 7] ? 'sold' : ''}}"><input type="hidden" name="seats[]" value="{{ ($i * 8) + 8  }}" > </div>
+                                                    </div>
+                                                @endfor
+                                            @endif
                                         </div>
                                     </div>
                                     @endif

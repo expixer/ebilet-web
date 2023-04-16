@@ -24,13 +24,13 @@ class EventRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required','string', 'min:3', 'max:120', 'unique:events'],
-            'description' => ['required','string', 'min:20', 'max:400'],
-            'tags' => [],
-            'start_date' => ['required', 'date_format:Y-m-d H:i'],
+            'name' => ['required', 'string', 'min:3', 'max:120', 'unique:events'],
+            'description' => ['required', 'string', 'min:5', 'max:400'],
+            'tags.*' => [],
+            'start_date' => [ 'date_format:Y-m-d H:i'],
             'end_date' => ['date', 'after:start_date', 'date_format:Y-m-d H:i:s'],
-            'location' => ['required','string'],
-            //'image' => ['required','file', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
+            'location' => ['required', 'string'],
+            'image' => ['file', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:4096'],
             'status' => ['numeric', 'default:1'],
         ];
     }

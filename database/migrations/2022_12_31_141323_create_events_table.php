@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -21,6 +20,7 @@ return new class extends Migration
             $table->string('tags', 600)->nullable();
             $table->string('location')->nullable();
             $table->string('image');
+            $table->string('seats', 600)->nullable()->default("[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]");
             $table->unsignedTinyInteger('type',);
             $table->unsignedTinyInteger("status")->default(1);
             $table->foreignIdFor(\App\Models\Merchant::class)->nullable();

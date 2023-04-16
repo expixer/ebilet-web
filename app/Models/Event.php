@@ -108,4 +108,15 @@ class Event extends Model
     {
         return $this->type >= 7;
     }
+
+    public function getImageAttribute($value)
+    {
+        return 'storage/' . $value;
+    }
+
+    public function setImageAttribute($value)
+    {
+        $this->attributes['image'] = strtolower($value);
+    }
+
 }

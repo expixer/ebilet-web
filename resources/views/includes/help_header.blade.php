@@ -82,7 +82,7 @@
     </li>
     <li class="profile-link">
     <a href="my_organisation_dashboard.html" class="link-item">My Organisation</a>
-    <a href="organiser_profile_view.html" class="link-item">My Profile</a>
+    <a href="organiser_profile_view" class="link-item">My Profile</a>
     <a href="sign_in.html" class="link-item">Sign Out</a>
     </li>
     </ul>

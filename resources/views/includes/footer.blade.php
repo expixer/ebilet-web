@@ -17,7 +17,7 @@
     <div class="footer-content">
     <h4>Useful Links</h4>
     <ul class="footer-link-list">
-    <li><a href="create.html" class="footer-link">Create Event</a></li>
+    <li><a href="/create" class="footer-link">Create Event</a></li>
     <li><a href="sell_tickets_online.html" class="footer-link">Sell Tickets Online</a></li>
     <li><a href="privacy_policy.html" class="footer-link">Privacy Policy</a></li>
     <li><a href="term_and_conditions.html" class="footer-link">Terms & Conditions</a></li>

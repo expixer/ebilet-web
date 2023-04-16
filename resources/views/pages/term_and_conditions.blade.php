@@ -123,7 +123,7 @@ Pages
 <a class="dropdown-item submenu-item" href="#">Create Event</a>
 <ul class="submenu dropdown-menu">
 <li><a class="dropdown-item pe-5" href="create.html">Create</a></li>
-<li><a class="dropdown-item pe-5" href="create_venue_event.html">Create Venue Event</a></li>
+<li><a class="dropdown-item pe-5" href="events/create">Create Venue Event</a></li>
 <li><a class="dropdown-item pe-5" href="create_online_event.html">Create Online Event</a></li>
 </ul>
 </li>
@@ -136,7 +136,7 @@ Pages
 </li>
 <li><a class="dropdown-item" href="booking_confirmed.html">Booking Confirmed</a></li>
 <li><a class="dropdown-item" href="attendee_profile_view.html">Attendee Profile View</a></li>
-<li><a class="dropdown-item" href="organiser_profile_view.html">Organiser Profile View</a></li>
+<li><a class="dropdown-item" href="organiser_profile_view">Organiser Profile View</a></li>
 <li><a class="dropdown-item" href="my_organisation_dashboard.html">Organization Dashboard</a></li>
 <li><a class="dropdown-item" href="sell_tickets_online.html">Sell Tickets Online</a></li>
 <li><a class="dropdown-item" href="refer_a_friend.html">Refer a Friend</a></li>
@@ -184,7 +184,7 @@ Pages
 </li>
 <li class="profile-link">
 <a href="my_organisation_dashboard.html" class="link-item">My Organisation</a>
-<a href="organiser_profile_view.html" class="link-item">My Profile</a>
+<a href="organiser_profile_view" class="link-item">My Profile</a>
 <a href="sign_in.html" class="link-item">Sign Out</a>
 </li>
 </ul>

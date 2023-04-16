@@ -3,6 +3,7 @@
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrganiserController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -12,6 +13,10 @@ Route::resource('events', EventController::class);
 Route::post('checkout', [CheckoutController::class, 'index'])->name('checkout.index');
 Route::get('/create', [HomeController::class, 'create'])->name('create');
 Route::post('/pay-confirm', [CheckoutController::class, 'payConfirm'])->name('booking.store');
+Route::get('organiser_profile_view', [OrganiserController::class, 'index'])->name('organiser_profile_view');
+Route::get('create_venue_event', function () {
+    return view('pages.create.create_venue_event');
+});
 
 Route::get('sign_in', function () {
     return view('pages.sign_in');
@@ -29,9 +34,6 @@ Route::get('creates', function () {
     return view('pages.create.create');
 })->name('create');
 
-Route::get('create_venue_event.html', function () {
-    return view('pages.create.create_venue_event');
-});
 Route::get('create_online_event.html', function () {
     return view('pages.create.create_online_event');
 });
@@ -95,9 +97,6 @@ Route::get('forgot_password.html', function () {
 Route::get('invoice.html', function () {
     return view('pages.invoice');
 });
-Route::get('organiser_profile_view.html', function () {
-    return view('pages.organiser_profile_view');
-})->name('organiser_profile_view');
 Route::get('privacy_policy.html', function () {
     return view('pages.privacy_policy');
 });
