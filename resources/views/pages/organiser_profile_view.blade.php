@@ -397,7 +397,7 @@
                                             <button class="event-link active" data-bs-toggle="tab"
                                                     data-bs-target="#saved" type="button" role="tab"
                                                     aria-controls="saved" aria-selected="true"><span
-                                                    class="event-count">1</span><span>kayıtlı Events</span></button>
+                                                        class="event-count">1</span><span>Kayıtlı Etkinlikler</span></button>
                                             @if($user->isMerchant())
                                                 <button class="event-link" data-bs-toggle="tab" data-bs-target="#organised"
                                                         type="button" role="tab" aria-controls="organised"
@@ -406,35 +406,38 @@
                                             @endif
                                             <button class="event-link" data-bs-toggle="tab" data-bs-target="#attending"
                                                     type="button" role="tab" aria-controls="attending"
-                                                    aria-selected="false"><span class="event-count">1</span><span>Katılacağım Etkinlikler</span>
+                                                    aria-selected="false"><span class="event-count">1</span><span>Katılacağım/Katıldığım Etkinlikler</span>
                                             </button>
                                         </div>
                                         <div class="tab-content">
                                             <div class="tab-pane fade show active" id="saved" role="tabpanel">
                                                 <div class="row">
                                                     <div class="col-md-12">
-                                                        <div class="main-card mt-4">
-                                                            <div class="card-top p-4">
-                                                                <div class="card-event-img">
-                                                                    <img src="assets/images/event-imgs/img-6.jpg"
-                                                                         alt="">
-                                                                </div>
-                                                                <div class="card-event-dt">
-                                                                    <h5>Step Up Open Mic Show</h5>
-                                                                    <div class="evnt-time">Thu, Jun 30, 2022 4:30 AM
+                                                        @foreach($bookmarkedEvents as $event)
+                                                            <div class="main-card mt-4">
+                                                                <div class="card-top p-4">
+                                                                    <div class="card-event-img">
+                                                                        <img src="{{asset($event->event->image)}}"
+                                                                             alt="">
                                                                     </div>
-                                                                    <div class="event-btn-group">
-                                                                        <button class="esv-btn saved-btn me-2"><i
-                                                                                class="fa-regular fa-bookmark me-2"></i>Save
-                                                                        </button>
-                                                                        <button class="esv-btn me-2"
-                                                                                onclick="window.location.href='online_event_detail_view.html'">
-                                                                            <i class="fa-solid fa-arrow-up-from-bracket me-2"></i>View
-                                                                        </button>
+                                                                    <div class="card-event-dt">
+                                                                        <h5>{{$event->event->name}}</h5>
+                                                                        <div class="evnt-time"><b>Başlangıç Tarihi:</b> {{$event->event->start_date->format('m-d-Y H:i')}}</div>
+                                                                        <br>
+                                                                        <div class="evnt-time"><b>Bitiş Tarihi:</b> {{$event->event->end_date->format('m-d-Y H:i')}}</div>
+                                                                        <div class="event-btn-group">
+                             {{--                                               <button class="esv-btn saved-btn me-2"><i
+                                                                                    class="fa-regular fa-bookmark me-2"></i>Kaydet
+                                                                            </button>--}}
+                                                                            <button class="esv-btn me-2"
+                                                                                    onclick="window.location.href='{{ route('events.show', ['event' => $event->event->id]) }}'">
+                                                                                <i class="fa-solid fa-arrow-up-from-bracket me-2"></i>Etkinliği Görüntüle
+                                                                            </button>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
+                                                        @endforeach
                                                     </div>
                                                 </div>
                                             </div>
@@ -487,26 +490,31 @@
                                             <div class="tab-pane fade" id="attending" role="tabpanel">
                                                 <div class="row">
                                                     <div class="col-md-12">
-                                                        <div class="main-card mt-4">
-                                                            <div class="card-top p-4">
-                                                                <div class="card-event-img">
-                                                                    <img src="assets/images/event-imgs/img-6.jpg"
-                                                                         alt="">
-                                                                </div>
-                                                                <div class="card-event-dt">
-                                                                    <h5>Step Up Open Mic Show</h5>
-                                                                    <div class="evnt-time">Thu, Jun 30, 2022 4:30 AM
+
+                                                        @foreach($recentlyEvents as $event)
+                                                            <div class="main-card mt-4">
+                                                                <div class="card-top p-4">
+                                                                    <div class="card-event-img">
+                                                                        <img src="{{asset($event->event->image)}}"
+                                                                             alt="">
                                                                     </div>
-                                                                    <div class="event-btn-group">
-                                                                        <button class="esv-btn me-2"
-                                                                                onclick="window.location.href='invoice.html'">
-                                                                            <i class="fa-solid fa-arrow-up-from-bracket me-2"></i>View
-                                                                            Ticket
-                                                                        </button>
+                                                                    <div class="card-event-dt">
+                                                                        <h5>{{$event->event->name}}</h5>
+                                                                        <div class="evnt-time"><b>Başlangıç Tarihi:</b> {{$event->event->start_date->format('m-d-Y H:i')}}</div>
+                                                                        <br>
+                                                                        <div class="evnt-time"><b>Alınan Bilet Adedi:</b> {{$event->seatCount}}</div>
+                                                                        <div class="event-btn-group">
+
+                                                                            <button class="esv-btn me-2"
+                                                                                    onclick="window.location.href='{{ route('events.show', ['event' => $event->event->id]) }}'">
+                                                                                <i class="fa-solid fa-arrow-up-from-bracket me-2"></i>Bileti Görüntüle
+                                                                            </button>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
+                                                        @endforeach
+
                                                     </div>
                                                 </div>
                                             </div>
