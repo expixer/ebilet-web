@@ -119,4 +119,14 @@ class Event extends Model
         $this->attributes['image'] = strtolower($value);
     }
 
+    public function bookmarks()
+    {
+        return $this->hasMany(Bookmark::class);
+    }
+
+    public function isBookmarkedBy( $user_id )
+    {
+        return $this->bookmarks()->where('user_id', $user_id)->exists();
+    }
+
 }

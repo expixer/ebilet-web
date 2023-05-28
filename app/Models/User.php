@@ -117,4 +117,9 @@ class User extends Authenticatable
     {
         return $this->merchant_id !== null;
     }
+
+    public function bookmarks()
+    {
+        return $this->hasMany(Bookmark::class);
+    }
 }

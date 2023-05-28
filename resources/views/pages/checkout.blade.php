@@ -62,37 +62,30 @@
                                         </div>
                                         <div class="bp-content bp-form">
                                             <div class="row">
-                                                <div class="col-lg-6 col-md-12">
+                                                <div class="col-lg-12 col-md-12">
                                                     <div class="form-group mt-4">
                                                         <label class="form-label">İsim*</label>
                                                         <input class="form-control h_50" type="text" placeholder=""
-                                                               value="Ali">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6 col-md-12">
-                                                    <div class="form-group mt-4">
-                                                        <label class="form-label">Soyisim*</label>
-                                                        <input class="form-control h_50" type="text" placeholder=""
-                                                               value="Yılmaz">
+                                                               value="{{$user->name}}">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-md-12">
                                                     <div class="form-group mt-4">
                                                         <label class="form-label">Eposta*</label>
                                                         <input class="form-control h_50" type="text" placeholder=""
-                                                               value="aliyilmaz@example.com">
+                                                               value="{{$user->email}}">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-md-12">
                                                     <div class="form-group mt-4">
-                                                        <label class="form-label">Adres*</label>
+                                                        <label class="form-label">Adres</label>
                                                         <input class="form-control h_50" type="text" placeholder=""
                                                                value="">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-md-12">
                                                     <div class="form-group main-form mt-4">
-                                                        <label class="form-label">Ülke*</label>
+                                                        <label class="form-label">Ülke</label>
                                                         <select class="selectpicker" data-size="5"
                                                                 title="Seçim Yapılmadı" data-live-search="true">
                                                             <option value="Algeria">Algeria</option>
@@ -101,32 +94,6 @@
                                                             <option value="Austria">Austria (Österreich)</option>
                                                             <option value="Belgium">Belgium (België)</option>
                                                             <option value="Bolivia">Bolivia</option>
-                                                            <option value="Brazil">Brazil</option>
-                                                            <option value="Canada">Canada</option>
-                                                            <option value="Chile">Chile</option>
-                                                            <option value="Colombia">Colombia</option>
-                                                            <option value="Costa Rica">Costa Rica</option>
-                                                            <option value="Cyprus">Cyprus</option>
-                                                            <option value="Czech Republic">Czech Republic</option>
-                                                            <option value="Denmark">Denmark</option>
-                                                            <option value="Dominican Republic">Dominican Republic
-                                                            </option>
-                                                            <option value="Estonia">Estonia</option>
-                                                            <option value="Finland">Finland</option>
-                                                            <option value="France">France</option>
-                                                            <option value="Germany">Germany</option>
-                                                            <option value="Greece">Greece</option>
-                                                            <option value="Hong Kong">Hong Kong</option>
-                                                            <option value="Iceland">Iceland</option>
-                                                            <option value="India">India</option>
-                                                            <option value="Indonesia">Indonesia</option>
-                                                            <option value="Ireland">Ireland</option>
-                                                            <option value="Israel">Israel</option>
-                                                            <option value="Italy">Italy</option>
-                                                            <option value="Japan">Japan</option>
-                                                            <option value="Latvia">Latvia</option>
-                                                            <option value="Lithuania">Lithuania</option>
-                                                            <option value="Luxembourg">Luxembourg</option>
                                                             <option value="Malaysia">Malaysia</option>
                                                             <option value="Mexico">Mexico</option>
                                                             <option value="Nepal">Nepal</option>
@@ -135,43 +102,27 @@
                                                             <option value="Norway">Norway</option>
                                                             <option value="Paraguay">Paraguay</option>
                                                             <option value="Peru">Peru</option>
-                                                            <option value="Philippines">Philippines</option>
-                                                            <option value="Poland">Poland</option>
-                                                            <option value="Portugal">Portugal</option>
-                                                            <option value="Singapore">Singapore</option>
-                                                            <option value="Slovakia">Slovakia</option>
-                                                            <option value="Slovenia">Slovenia</option>
-                                                            <option value="South Africa">South Africa</option>
-                                                            <option value="South Korea">South Korea</option>
-                                                            <option value="Spain">Spain</option>
-                                                            <option value="Sweden">Sweden</option>
-                                                            <option value="Switzerland">Switzerland</option>
-                                                            <option value="Tanzania">Tanzania</option>
-                                                            <option value="Thailand">Thailand</option>
-                                                            <option value="Turkey">Turkey</option>
-                                                            <option value="United Kingdom">United Kingdom</option>
-                                                            <option value="United States">United States</option>
-                                                            <option value="Vietnam">Vietnam</option>
+                                                            <option value="Turkey">Türkiye</option>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-md-12">
                                                     <div class="form-group mt-4">
-                                                        <label class="form-label">Şehir*</label>
+                                                        <label class="form-label">Şehir</label>
                                                         <input class="form-control h_50" type="text" placeholder=""
                                                                value="">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-md-12">
                                                     <div class="form-group mt-4">
-                                                        <label class="form-label">İlçe/Mahalle*</label>
+                                                        <label class="form-label">İlçe/Mahalle</label>
                                                         <input class="form-control h_50" type="text" placeholder=""
                                                                value="">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-md-12">
                                                     <div class="form-group mt-4">
-                                                        <label class="form-label">Posta Kodu*</label>
+                                                        <label class="form-label">Posta Kodu</label>
                                                         <input class="form-control h_50" type="text" placeholder=""
                                                                value="">
                                                     </div>
@@ -225,7 +176,7 @@
                                     <div class="order-summary-content p_30">
                                         <div class="event-order-dt">
                                             <div class="event-thumbnail-img">
-                                                <img src="assets/images/event-imgs/img-7.jpg" alt="">
+                                                <img src="{{asset($event->image)}}" alt="">
                                             </div>
                                             <div class="event-order-dt-content">
                                                 <h5>{{$event->name}}</h5>
@@ -240,12 +191,12 @@
                                             </div>
                                             <div class="order-total-dt">
                                                 <div class="order-text">Alt Toplam</div>
-                                                <div class="order-number">₺50.00 * {{$seatCount}}</div>
+                                                <div class="order-number">₺{{$price}} * {{$seatCount}}</div>
                                             </div>
                                             <div class="divider-line"></div>
                                             <div class="order-total-dt">
                                                 <div class="order-text">Toplam</div>
-                                                <div class="order-number ttl-clr">₺{{50 * $seatCount}}</div>
+                                                <div class="order-number ttl-clr">₺{{$price * $seatCount}}</div>
                                             </div>
                                         </div>
                                         {{--<div class="coupon-code-block">
@@ -264,6 +215,7 @@
                                                 <input type="hidden" name="event_id" value="{{$event->id}}">
                                                 <input type="hidden" name="seat_count" value="{{$seatCount}}">
                                                 <input type="hidden" name="seats" value="{{implode(',' ,$seats)}}">
+                                                <input type="hidden" name="price" value="{{$price * $seatCount}}">
                                                 <button class="main-btn btn-hover h_50 w-100 mt-5" type="submit">Onayla & Öde</button>
                                             </form>
                                         </div>

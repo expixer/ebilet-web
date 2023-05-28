@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookmarkController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\HomeController;
@@ -10,6 +11,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/index', [HomeController::class, 'index'])->name('index');
 Route::resource('events', EventController::class);
+Route::resource('bookmarks', BookmarkController::class)->only(['store', 'destroy']);
 Route::post('checkout', [CheckoutController::class, 'index'])->name('checkout.index');
 Route::get('/create', [HomeController::class, 'create'])->name('create');
 Route::post('/pay-confirm', [CheckoutController::class, 'payConfirm'])->name('booking.store');

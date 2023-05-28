@@ -16,11 +16,15 @@ class HomeController extends Controller
             ->leftJoin('product_inventories', 'product_inventories.product_id', 'products.id')
             ->groupBy('events.id')
             ->get(['events.*', \DB::raw('min(product_inventories.price) as min_price')]);
-        return view('pages.index', compact('events'));
+        $bookmarks = auth()->user() ? auth()->user()->bookmarks()->pluck('event_id')->toArray() : [];
+        return view('pages.index', compact('events', 'bookmarks'));
     }
 
     public function create()
     {
+        if (!auth()->user()->isMerchant()) {
+            return redirect()->route('home');
+        }
         return view('pages.create.create_venue_event');
     }
 

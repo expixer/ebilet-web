@@ -59,7 +59,13 @@
                                                     <a href="{{ route('events.show', ['event' => $event->id]) }}" class="thumbnail-img">
                                                         <img src="{{ $event->image }}" alt="">
                                                     </a>
-                                                    <span class="bookmark-icon" title="Bookmark"></span>
+                                                    @auth
+                                                        <form method="post" id="bookmark-submit" action="{{ route('bookmarks.store') }}">
+                                                            @csrf
+                                                            <input hidden name="event_id" value="{{$event->id}}">
+                                                            <span onclick="document.getElementById('bookmark-submit').submit();" class="bookmark-icon {{\App\Models\Event::find($event->id)->isBookmarkedBy(Auth::user()->id) ? "bookmarked" : ""}}" title="Bookmark"></span>
+                                                        </form>
+                                                    @endauth
                                                 </div>
                                                 <div class="event-content">
                                                     <a href="{{ route('events.show', ['event' => $event->id]) }}" class="event-title">{{$event->name}}</a>

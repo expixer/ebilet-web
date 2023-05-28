@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\EventRequest;
 use App\Http\Resources\EventResource;
 use App\Models\Event;
+use Arr;
+use Carbon\Carbon;
 
 class EventController extends Controller
 {
@@ -27,7 +29,17 @@ class EventController extends Controller
      */
     public function store(EventRequest $request)
     {
-        $event = Event::create($request->validated());
+        $path = $request->file('image')->storeAs('events', $request->name . '-'. time() . '.jpg', 'public');
+        $event = Event::create(
+            array_merge(
+                Arr::except($request->validated(), ['image']),
+                [
+                    'image' => $path,
+                    'end_date' => Carbon::createFromFormat('Y-m-d H:i', $request->start_date)->addMinutes($request->duration),
+                    'merchant_id' => auth()->user()->merchant->id,
+                ]
+            )
+        );
 
         return new EventResource($event);
     }
