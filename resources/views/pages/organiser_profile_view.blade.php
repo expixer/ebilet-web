@@ -397,7 +397,7 @@
                                             <button class="event-link active" data-bs-toggle="tab"
                                                     data-bs-target="#saved" type="button" role="tab"
                                                     aria-controls="saved" aria-selected="true"><span
-                                                        class="event-count">1</span><span>Kayıtlı Etkinlikler</span></button>
+                                                        class="event-count">{{$bookmarkedEvents->count()}}</span><span>Kayıtlı Etkinlikler</span></button>
                                             @if($user->isMerchant())
                                                 <button class="event-link" data-bs-toggle="tab" data-bs-target="#organised"
                                                         type="button" role="tab" aria-controls="organised"
@@ -406,7 +406,7 @@
                                             @endif
                                             <button class="event-link" data-bs-toggle="tab" data-bs-target="#attending"
                                                     type="button" role="tab" aria-controls="attending"
-                                                    aria-selected="false"><span class="event-count">1</span><span>Katılacağım/Katıldığım Etkinlikler</span>
+                                                    aria-selected="false"><span class="event-count">{{$recentlyEvents->count()}}</span><span>Katılacağım/Katıldığım Etkinlikler</span>
                                             </button>
                                         </div>
                                         <div class="tab-content">
