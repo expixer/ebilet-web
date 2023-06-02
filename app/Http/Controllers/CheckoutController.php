@@ -28,10 +28,14 @@ class CheckoutController extends Controller
         }
         $event = Event::find($request->event_id);
         $seats = ($event->seats);
-        foreach (array_unique(explode(',', $request->seats)) as $seatId) {
-            $seats[$seatId - 1] = $request->user()->id;
+        if ($request->seats){
+            foreach (array_unique(explode(',', $request->seats)) as $seatId) {
+                $seats[$seatId - 1] = $request->user()->id;
+            }
+            $event->update(['seats' => $seats]);
+        } else {
+            $event->update(['tickets' => $event->tickets ? $event->tickets . ',' . $request->user()->id : $request->user()->id]);
         }
-        $event->update(['seats' => $seats]);
         $booking = \App\Models\Booking::create([
             'user_id' => $request->user()->id,
             'booking_number' => 'BK' . $request->user()->id . rand(1000, 9999),

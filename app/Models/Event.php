@@ -51,6 +51,7 @@ class Event extends Model
         'description',
         'tags',
         'seats',
+        'tickets',
         'start_date',
         'end_date',
         'location',
