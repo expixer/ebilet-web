@@ -58,6 +58,9 @@ class CheckoutController extends Controller
     public function useTicket(Request $request): \Illuminate\Http\JsonResponse
     {
         $booking = Booking::where('booking_number', $request->booking_number)->firstOrFail();
+        if ($booking->isConfirmed) {
+            return response()->json(['message' => 'Ticket already used'], 400);
+        }
         $booking->update(['isConfirmed' => true]);
         return response()->json($booking);
     }
