@@ -27,17 +27,19 @@
                         <div class="event-filter-items">
                             <div class="featured-controls">
                                 <div class="filter-tag">
-                                    <a href="{{route('home')}}" class="active">All</a>
-                                    <a href="{{route('home', ['date' => 'today'])}}">Bugün</a>
-                                    <a href="{{route('home', ['date' => 'tomorrow'])}}">Yarın</a>
-                                    <a href="{{route('home', ['date' => 'this_week'])}}">Bu Hafta içi</a>
+                                    <a href="{{route('home')}}" class="active">Varsayılan</a>
+                                    <a href="{{route('home', ['sort' => 'date'])}}">Tarihi Yaklaşan</a>
+                                    <a href="{{route('home', ['sort' => 'like'])}}">En Beğenilenlere Göre</a>
+                                    <a href="{{route('home', ['sort' => 'price'])}}">Uygun Fiyata Göre</a>
+                                    <a href="{{route('home', ['sort' => 'name'])}}">Alfabetik</a>
+{{--                                    <a href="{{route('home', ['date' => 'this_week'])}}">Bu Hafta içi</a>
                                     <a href="{{route('home', ['date' => 'this_weekend'])}}">Bu Hafta sonu</a>
                                     <a href="{{route('home', ['date' => 'next_week'])}}">Önümüzdeki Hafta İçi</a>
                                     <a href="{{route('home', ['date' => 'next_weekend'])}}">Önümüzdeki Hafta Sonu</a>
                                     <a href="{{route('home', ['date' => 'this_month'])}}">Bu Ay</a>
                                     <a href="{{route('home', ['date' => 'next_month'])}}">Önümüzdeki Ay</a>
                                     <a href="{{route('home', ['date' => 'this_year'])}}">Bu Yıl</a>
-                                    <a href="{{route('home', ['date' => 'next_year'])}}">Önümüzdeki Yıl</a>
+                                    <a href="{{route('home', ['date' => 'next_year'])}}">Önümüzdeki Yıl</a>--}}
                                 </div>
                                 <div class="controls">
                                     <button type="button" class="control" data-filter="all">Hepsi</button>
@@ -71,7 +73,10 @@
                                                     <a href="{{ route('events.show', ['event' => $event->id]) }}" class="event-title">{{$event->name}}</a>
                                                     <div class="duration-price-remaining">
                                                         <span class="duration-price">@if($event->min_price != 0)₺ {{$event->min_price}} @else Ücretsiz @endif</span>
-                                                        <span class="remaining"></span>
+                                                        <span class="remaining">
+                                                            @if($event->total_product == 0) Tükendi
+                                                            @elseif($event->total_product < 10) Son {{$event->total_product}} bilet!
+                                                            @endif</span>
                                                     </div>
                                                 </div>
                                                 <div class="event-footer">

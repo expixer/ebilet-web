@@ -127,4 +127,13 @@ class User extends Authenticatable
     {
         return $this->hasMany(Booking::class);
     }
+
+    public function suggestionEvents()
+    {
+        $lastBooking = $this->bookings()->orderBy('created_at', 'desc')->first();
+        $lastEvent = $lastBooking->event;
+        return Event::where('category_id', $lastEvent->category_id)
+            ->where('id', '!=', $lastEvent->id)
+            ->limit(3)->get();
+    }
 }

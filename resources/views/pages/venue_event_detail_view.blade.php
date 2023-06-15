@@ -176,7 +176,44 @@
                                     </div>
                                 </form>
                         </div>
+
                     </div>
+                    @foreach($suggestionEvents as $event)
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mix {{ is_array($event->tags) ? implode(' ', $event->tags) : '' }}" data-ref="mixitup-target">
+                            <div class="main-card mt-4">
+                                <div class="event-thumbnail">
+                                    <a href="{{ route('events.show', ['event' => $event->id]) }}" class="thumbnail-img">
+                                        <img src="/{{ $event->image }}" alt="">
+                                    </a>
+                                    @auth
+                                        <form method="post" id="bookmark-submit{{$event->id}}" action="{{ route('bookmarks.store') }}">
+                                            @csrf
+                                            <input hidden name="event_id" value="{{$event->id}}">
+                                            <span onclick="document.getElementById('bookmark-submit{{$event->id}}').submit();" class="bookmark-icon {{in_array($event->id, $bookmarks) ? "bookmarked" : ""}}" title="Bookmark"></span>
+                                        </form>
+                                    @endauth
+                                </div>
+                                <div class="event-content">
+                                    <a href="{{ route('events.show', ['event' => $event->id]) }}" class="event-title">{{$event->name}}</a>
+                                    <div class="duration-price-remaining">
+                                        <span class="duration-price">@if($event->min_price != 0)₺ {{$event->min_price}} @else Ücretsiz @endif</span>
+                                        <span class="remaining"></span>
+                                    </div>
+                                </div>
+                                <div class="event-footer">
+                                    <div class="event-timing">
+                                        <div class="publish-date">
+                                            <span><i class="fa-solid fa-calendar-day me-2"></i>{{$event->start_date->translatedFormat('j M y')}}</span>
+                                            <span class="dot"><i class="fa-solid fa-circle"></i></span>
+                                            <span>{{$event->start_date->diffForHumans()}}</span>
+                                        </div>
+                                        <span title="{{ $event->end_date->diffForHumans($event->start_date, true) }} sürecek" class="publish-time"><i class="fa-solid fa-clock me-1"></i>{{ $event->end_date->diffForHumans($event->start_date, true) }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+
                 </div>
             </div>
         </div>

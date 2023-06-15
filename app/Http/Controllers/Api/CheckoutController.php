@@ -26,7 +26,7 @@ class CheckoutController extends Controller
         } else {
             $event->update(['tickets' => $event->tickets ? $event->tickets . ',' . $request->user()->id : $request->user()->id]);
         }
-        $booking = \App\Models\Booking::create([
+        $booking = Booking::create([
             'user_id' => $request->user()->id,
             'booking_number' => 'BK' . $request->user()->id . rand(1000, 9999),
             'event_id' => $request->event_id,

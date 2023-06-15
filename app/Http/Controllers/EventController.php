@@ -38,7 +38,7 @@ class EventController extends Controller
      */
     public function store(EventRequest $request)
     {
-        $path = $request->file('image')->storeAs('events', $request->name . '-'. time() . '.jpg', 'public');
+        $path = $request->file('image')->storeAs('events', $request->name . '-' . time() . '.jpg', 'public');
         $event = Event::create(
             array_merge(
                 Arr::except($request->validated(), ['image']),
@@ -60,15 +60,31 @@ class EventController extends Controller
      * @param int $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function show($event)
+    public function show(Request $request, $event)
     {
         $event = Event::with(['products', 'merchant'])->find($event);
-//        $seats = $event->seats;
-//        $seats[1] = 12;
-//        $event->seats = $seats;
-//        $event->update();
-//        dd(is_array($event->seats));
-        return view('pages.venue_event_detail_view', compact('event'));
+        if (auth()->check() && $request->user()->bookings()->count() > 0) {
+            $lastBooking = $request->user()->bookings()->orderBy('created_at', 'desc')->first();
+            $lastEvent = $lastBooking->event;
+            $suggestionEvents = Event::with(['products', 'merchant'])
+                ->where('events.category_id', $lastEvent->category_id)
+                ->where('events.id', '!=', $lastEvent->id)
+                ->leftJoin('products', 'event_id', 'events.id')
+                ->leftJoin('product_inventories', 'product_inventories.product_id', 'products.id')
+                ->groupBy('events.id')
+                ->orderByDesc('events.created_at')
+                ->limit(4)
+                ->get(['events.*', \DB::raw('min(product_inventories.price) as min_price')]);
+        } else {
+            $suggestionEvents = Event::with(['products', 'merchant'])
+                ->leftJoin('products', 'event_id', 'events.id')
+                ->leftJoin('product_inventories', 'product_inventories.product_id', 'products.id')
+                ->groupBy('events.id')
+                ->get(['events.*', \DB::raw('min(product_inventories.price) as min_price')])
+                ->random(4);
+        }
+        $bookmarks = auth()->user() ? auth()->user()->bookmarks()->pluck('event_id')->toArray() : [];
+        return view('pages.venue_event_detail_view', compact('event', 'suggestionEvents', 'bookmarks'));
     }
 
     /**
