@@ -43,3 +43,17 @@ php artisan migrate
 
 # Geliştirme sunucusunu başlatın
 php artisan serve
+```
+
+## Kullanım
+
+Web tarayıcınızda http://localhost:8000 adresini ziyaret edin.
+
+## Lisans
+
+Bu proje MIT lisansı ile lisanslanmıştır. Daha fazla bilgi için [LISANS](LICENSE.txt) dosyasına bakın.
+
+## İletişim
+
+Sorularınız ve geri bildirimleriniz için [GitHub Issues](https://github.com/expixer/SeriPortProgrami/issues) kısmını kullanabilirsiniz.
+
